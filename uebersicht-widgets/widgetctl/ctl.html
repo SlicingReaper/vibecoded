@@ -1,0 +1,532 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WIDGET//CTL</title>
+<style>
+:root{
+  --c:#3ef0ff; --blue:#1f8fff; --amber:#ffb84d; --red:#ff5f6d; --dim:#5d7a99; --green:#4dffa0;
+  --bg:rgba(4,9,20,.94); --ink:#cfefff; --line:rgba(62,240,255,.18);
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;
+  font-family:"SF Mono",Menlo,ui-monospace,monospace;color:var(--ink);-webkit-user-select:none;user-select:none;cursor:default}
+#shell{position:absolute;inset:0;border:1px solid rgba(62,240,255,.35);border-radius:14px;overflow:hidden;
+  background:var(--bg);
+  background-image:linear-gradient(rgba(62,240,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(62,240,255,.035) 1px,transparent 1px);
+  background-size:12px 12px;box-shadow:inset 0 0 60px rgba(62,240,255,.05);display:flex;flex-direction:column}
+.glow{color:var(--c);text-shadow:0 0 6px var(--c)}
+.lbl{font-size:9px;letter-spacing:2px;color:var(--dim)}
+.btn{font:inherit;font-size:9.5px;letter-spacing:1.6px;font-weight:700;color:var(--c);background:rgba(10,24,48,.6);
+  border:1px solid rgba(62,240,255,.45);padding:6px 10px;cursor:pointer;box-shadow:inset 0 0 8px rgba(62,240,255,.12);text-shadow:0 0 6px rgba(62,240,255,.7)}
+.btn:hover{background:rgba(62,240,255,.12)}
+.btn.red{color:var(--red);border-color:rgba(255,95,109,.5);text-shadow:0 0 6px rgba(255,95,109,.6)}
+.btn.amber{color:var(--amber);border-color:rgba(255,184,77,.5);text-shadow:0 0 6px rgba(255,184,77,.6)}
+.btn.sm{padding:3px 7px;font-size:8.5px}
+
+/* title bar */
+#bar{height:46px;flex-shrink:0;display:flex;align-items:center;gap:14px;padding:0 16px 0 14px;border-bottom:1px solid var(--line);cursor:grab}
+#bar:active{cursor:grabbing}
+#x{width:22px;height:22px;display:grid;place-items:center;border:1px solid rgba(255,95,109,.6);color:var(--red);font-size:12px;cursor:pointer;
+  text-shadow:0 0 6px var(--red);box-shadow:0 0 8px rgba(255,95,109,.25);flex-shrink:0}
+#x:hover{background:rgba(255,95,109,.18)}
+#title{font-size:12px;letter-spacing:3px}
+#sub{font-size:9px;letter-spacing:1.5px;color:var(--dim)}
+#bar .sp{flex:1}
+#live{font-size:9px;letter-spacing:1.8px;padding:5px 9px;border:1px solid rgba(77,255,160,.45);color:var(--green);cursor:pointer;text-shadow:0 0 6px rgba(77,255,160,.6)}
+#live.off{color:var(--amber);border-color:rgba(255,184,77,.5);text-shadow:0 0 6px rgba(255,184,77,.6)}
+
+main{flex:1;display:flex;min-height:0}
+#left{flex:1;padding:14px 16px 12px;display:flex;flex-direction:column;min-width:0}
+#right{width:318px;flex-shrink:0;border-left:1px solid var(--line);padding:14px 16px 12px;display:flex;flex-direction:column;gap:9px;overflow:auto}
+#right::-webkit-scrollbar{width:0}
+.head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+
+/* screen map */
+#mapWrap{flex:1;min-height:0;display:flex;align-items:flex-start;justify-content:center}
+#map{position:relative;border:1px solid rgba(62,240,255,.3);background:rgba(0,0,0,.35);overflow:hidden;
+  box-shadow:0 0 24px rgba(0,0,0,.5),inset 0 0 30px rgba(62,240,255,.04)}
+#map .menubar{position:absolute;left:0;right:0;top:0;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.06)}
+.cell{position:absolute;border:1px dashed rgba(62,240,255,.10)}
+.tile{position:absolute;overflow:hidden;cursor:grab;transition:box-shadow .15s, opacity .15s}
+.tile .nm{position:absolute;left:6px;top:5px;font-size:8.5px;letter-spacing:1.4px;white-space:nowrap}
+.tile .gl{position:absolute;inset:0;display:grid;place-items:center;font-size:20px;opacity:.55}
+.tile .sz{position:absolute;left:6px;bottom:4px;font-size:7px;letter-spacing:1px;opacity:.7}
+.tile.sel{outline:2px solid #fff;outline-offset:2px}
+.tile.ghosted{opacity:.25}
+#preview{position:absolute;pointer-events:none;border:2px dashed;display:none;z-index:5}
+#preview.free{border-color:var(--green);background:rgba(77,255,160,.10)}
+#preview.swap{border-color:var(--blue);background:rgba(31,143,255,.12)}
+#preview.bad{border-color:var(--red);background:rgba(255,95,109,.12)}
+#swapMark{position:absolute;pointer-events:none;display:none;z-index:5;border:2px dashed var(--blue);background:rgba(31,143,255,.08)}
+#ghost{position:fixed;pointer-events:none;z-index:50;display:none;opacity:.92;box-shadow:0 10px 30px rgba(0,0,0,.6)}
+
+/* storage tray */
+#tray{margin-top:12px;min-height:74px;border:1px dashed rgba(255,184,77,.45);background:rgba(255,184,77,.04);
+  display:flex;gap:10px;align-items:center;padding:10px;flex-wrap:wrap;transition:background .15s}
+#tray.hot{background:rgba(255,184,77,.14);border-style:solid}
+#tray .empty{font-size:9px;letter-spacing:1.6px;color:rgba(255,184,77,.6);margin:auto}
+.chip{position:relative;width:124px;height:52px;cursor:grab;overflow:hidden}
+.chip .nm{position:absolute;left:8px;top:7px;font-size:8.5px;letter-spacing:1.4px}
+.chip .dp{position:absolute;right:6px;bottom:5px;font-size:8px;letter-spacing:1.4px;padding:2px 5px;border:1px solid;cursor:pointer}
+
+/* right panel */
+.svc{display:flex;align-items:center;gap:8px;padding:4px 8px;border:1px solid transparent;cursor:pointer;font-size:9.5px;letter-spacing:1.2px}
+.svc:hover{background:rgba(62,240,255,.06)}
+.svc.on{border-color:rgba(62,240,255,.5);background:rgba(62,240,255,.08)}
+.svc .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;outline:1px solid rgba(255,255,255,.35)}
+.svc .st{margin-left:auto;font-size:8px;letter-spacing:1.4px}
+.svc .ov{font-size:7.5px;color:var(--amber);letter-spacing:1px}
+.sec{border-top:1px solid var(--line);padding-top:10px}
+.grid2{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+@keyframes wctlhue{from{filter:hue-rotate(0deg)}to{filter:hue-rotate(360deg)}}
+.style{height:40px;position:relative;cursor:pointer;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.style .nm{position:absolute;left:6px;bottom:5px;font-size:7.5px;letter-spacing:1.2px}
+.style.on{outline:2px solid #fff;outline-offset:1px}
+.schemes{display:grid;grid-template-columns:repeat(8,1fr);gap:5px 6px}
+.sw{height:26px;cursor:pointer;position:relative;border:1px solid rgba(255,255,255,.08)}
+.sw.on{outline:2px solid #fff;outline-offset:1px}
+.sw i{position:absolute;inset:auto 4px 4px auto;width:8px;height:8px;border-radius:50%}
+.swn{font-size:6.5px;letter-spacing:.6px;color:var(--dim);text-align:center;margin-top:3px}
+.inherit{display:flex;gap:6px;align-items:center;margin-top:6px}
+.inherit .btn.on{background:rgba(62,240,255,.18)}
+#pv{height:112px;position:relative;overflow:hidden;margin-top:2px}
+
+footer{height:34px;flex-shrink:0;border-top:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:0 16px}
+#msg{font-size:9px;letter-spacing:1.4px;color:var(--c);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#msg.err{color:var(--red)}
+#msg.warn{color:var(--amber)}
+kbd{font:inherit;font-size:8.5px;color:var(--dim);border:1px solid rgba(93,122,153,.5);padding:1px 4px}
+</style>
+</head>
+<body>
+<div id="shell">
+  <div id="bar">
+    <div id="x" title="Close (⌃⌥⌘S / Esc)">✕</div>
+    <div>
+      <div id="title" class="glow">WIDGET//CTL</div>
+      <div id="sub">5 SERVICES · ÜBERSICHT</div>
+    </div>
+    <div class="sp"></div>
+    <div id="live" title="Show / hide every widget (same as ⌃⌥⌘W)">● LIVE</div>
+    <button class="btn sm" id="sync" title="Re-run every widget now">↻ SYNC</button>
+  </div>
+  <main>
+    <section id="left">
+      <div class="head"><span class="lbl">SCREEN//GRID</span><span class="lbl" id="gridInfo"></span></div>
+      <div id="mapWrap"><div id="map"><div id="preview"></div><div id="swapMark"></div></div></div>
+      <div class="head" style="margin:12px 0 0"><span class="lbl" style="color:rgba(255,184,77,.8)">STORAGE//UNPLACED</span><span class="lbl">DROP HERE TO STORE · DEPLOY ▸ TO PLACE</span></div>
+      <div id="tray"></div>
+    </section>
+    <aside id="right">
+      <div>
+        <div class="head"><span class="lbl">SERVICES</span><span class="lbl">TAP TO THEME</span></div>
+        <div id="svcs"></div>
+      </div>
+      <div class="sec">
+        <div class="head"><span class="lbl">STYLE</span><span class="lbl" id="tgt1"></span></div>
+        <div class="grid2" id="styles"></div>
+      </div>
+      <div class="sec">
+        <div class="head"><span class="lbl">SCHEME</span><span class="lbl" id="tgt2"></span></div>
+        <div class="schemes" id="schemes"></div>
+        <div class="inherit" id="inh"></div>
+      </div>
+      <div class="sec">
+        <div class="head"><span class="lbl">PREVIEW</span><span class="lbl" id="pvName"></span></div>
+        <div id="pv"></div>
+      </div>
+    </aside>
+  </main>
+  <footer>
+    <div id="msg">READY</div>
+    <span class="lbl"><kbd>⌃⌥⌘S</kbd> OPEN/CLOSE</span>
+    <button class="btn sm amber" id="reset" title="Back to the original stack">RESET LAYOUT</button>
+  </footer>
+</div>
+<div id="ghost"></div>
+
+<script>
+"use strict";
+// ───────── registry: one entry per widget/service. Add a widget here + give it the WIDGET//CTL block. ─────────
+const WIDGETS = [
+  { id: "doubloons", name: "WALLET//Ð",   file: "doubloons.jsx", w: 230, h: 176, def: [0, 0],  glyph: "Ð" },
+  { id: "hard75",    name: "75//HARD",    file: "75hard.jsx",    w: 230, h: 314, def: [0, 4],  glyph: "75" },
+  { id: "studyterm", name: "STUDY//TERM", file: "studyterm.jsx", w: 230, h: 176, def: [0, 11], glyph: "▶" },
+  { id: "quote",     name: "QUOTE//DAY",  file: "quote.jsx",     w: 230, h: 176, def: [0, 15], glyph: "“" },
+  { id: "notepad",   name: "NOTE//PAD",   file: "notepad.jsx",   w: 230, h: 314, def: [1, 0],  glyph: "✎" },
+];
+const BY = Object.fromEntries(WIDGETS.map((w) => [w.id, w]));
+// same tables as the widgets' WIDGET//CTL block — keep in step
+const SCHEMES = {
+  cyan:    { c: "#3ef0ff", blue: "#1f8fff", amber: "#ffb84d", red: "#ff5f6d", dim: "#5d7a99", bg: "4,9,20",      inset: "10,24,48",    text: "#cfefff" },
+  amber:   { c: "#ffb000", blue: "#ff7b29", amber: "#ffe066", red: "#ff4d3d", dim: "#8f7350", bg: "16,9,2",      inset: "40,22,6",     text: "#ffe9c4" },
+  matrix:  { c: "#3dff7f", blue: "#19c25e", amber: "#d8ff47", red: "#ff4f6b", dim: "#4f8a62", bg: "2,13,6",      inset: "6,32,14",     text: "#d4ffe1" },
+  vapor:   { c: "#ff5ad9", blue: "#8b6dff", amber: "#ffc857", red: "#ff4f7e", dim: "#8c6fa3", bg: "15,5,25",     inset: "38,14,56",    text: "#f7deff" },
+  sunset:  { c: "#ff8c5a", blue: "#ffc06b", amber: "#ffe07a", red: "#ff4f6d", dim: "#9c7a72", bg: "22,9,10",     inset: "52,20,22",    text: "#ffe7dc" },
+  ice:     { c: "#eaf6ff", blue: "#8ec9ff", amber: "#ffd38f", red: "#ff8f8f", dim: "#7e90a6", bg: "12,16,24",    inset: "30,38,52",    text: "#f3f8ff" },
+  gold:    { c: "#e8c15a", blue: "#c9a227", amber: "#f5dc8c", red: "#d9534f", dim: "#8a7a4f", bg: "8,8,8",       inset: "26,24,18",    text: "#f3e6c0" },
+  royal:   { c: "#ffffff", blue: "#d9c8ff", amber: "#ffd479", red: "#ff8fa3", dim: "#b9a3e6", bg: "74,32,140",   inset: "98,54,170",   text: "#f4eeff" },
+  marble:  { c: "#2d2a26", blue: "#5b6b7a", amber: "#a07a2c", red: "#b0413e", dim: "#8d877e", bg: "243,240,234", inset: "228,224,216", text: "#3a3631" },
+  pastel:  { c: "#8a6fd1", blue: "#5f9bd6", amber: "#d69a4a", red: "#d9707f", dim: "#a59bb4", bg: "251,245,252", inset: "240,232,246", text: "#4d4560" },
+  rose:    { c: "#f2b5a7", blue: "#d79a8c", amber: "#f5d0a9", red: "#e0707a", dim: "#8f7471", bg: "26,17,19",    inset: "48,32,35",    text: "#f8e4df" },
+  ink:     { c: "#111111", blue: "#3a3a3a", amber: "#8a6d1f", red: "#c0392b", dim: "#8a8a8a", bg: "255,255,255", inset: "240,240,240", text: "#1a1a1a" },
+  forest:  { c: "#a8d5a2", blue: "#7fb7a4", amber: "#e3c77a", red: "#e08a7a", dim: "#6f8a6a", bg: "14,26,18",    inset: "26,44,32",    text: "#e2f1df" },
+  ocean:   { c: "#7fdbff", blue: "#4aa3df", amber: "#ffd27f", red: "#ff7f8f", dim: "#5f86a3", bg: "6,28,48",     inset: "14,48,76",    text: "#e2f5ff" },
+  rainbow: { c: "#ff4fd8", blue: "#4fa8ff", amber: "#ffd84f", red: "#ff4f6b", dim: "#9a7fb8", bg: "12,6,22",     inset: "34,18,52",    text: "#fbeaff", cycle: true },
+};
+const STYLES = {
+  terminal: { tex: "grid",   bin: true,  brackets: true,  radius: 0,  alpha: 0.88, blur: 22, glow: true,  edge: "55", bw: 1 },
+  crt:      { tex: "scan",   bin: false, brackets: true,  radius: 4,  alpha: 0.92, blur: 16, glow: true,  edge: "77", bw: 1 },
+  glass:    { tex: "glass",  bin: false, brackets: false, radius: 18, alpha: 0.5,  blur: 30, glow: true,  edge: "40", bw: 1 },
+  minimal:  { tex: "none",   bin: false, brackets: false, radius: 8,  alpha: 0.95, blur: 10, glow: false, edge: "30", bw: 1 },
+  marble:   { tex: "marble", bin: false, brackets: false, radius: 12, alpha: 0.97, blur: 8,  glow: false, edge: "44", bw: 1 },
+  paper:    { tex: "none",   bin: false, brackets: false, radius: 14, alpha: 0.98, blur: 0,  glow: false, edge: "18", bw: 1, soft: true },
+  bold:     { tex: "none",   bin: false, brackets: false, radius: 0,  alpha: 1,    blur: 0,  glow: false, edge: "",   bw: 2, hard: true },
+};
+// grid: columns counted from the RIGHT edge, rows from the top — the original stack sits on it exactly
+const G = { M: 40, MIN: 12, CW: 230, GAP: 12, CP: 242, RP: 47 };   // M = right margin · MIN = smallest top/bottom margin
+
+// ───────── state ─────────
+const S = { W: 1470, H: 919, global: { style: "terminal", scheme: "cyan" }, L: {}, sel: "all", hidden: false };
+const cols = () => Math.max(1, Math.floor((S.W - 2 * G.M - G.CW) / G.CP) + 1);
+const rows = () => Math.max(1, Math.floor((S.H - 2 * G.MIN + G.GAP) / G.RP));
+const top0 = () => Math.floor((S.H - (rows() * G.RP - G.GAP)) / 2);   // grid sits centred, same gap top and bottom
+const span = (id) => Math.ceil((BY[id].h + G.GAP) / G.RP);
+const px = (c, r) => ({ x: S.W - G.M - G.CW - c * G.CP, y: top0() + r * G.RP });
+const inBounds = (id, p) => p.c >= 0 && p.c < cols() && p.r >= 0 && p.r + span(id) <= rows();
+const overlap = (a, pa, b, pb) => pa.c === pb.c && pa.r < pb.r + span(b) && pb.r < pa.r + span(a);
+const clone = (o) => JSON.parse(JSON.stringify(o));
+function valid(L) {
+  const on = WIDGETS.filter((w) => L[w.id].placed);
+  for (const w of on) if (!inBounds(w.id, L[w.id])) return false;
+  for (let i = 0; i < on.length; i++) for (let j = i + 1; j < on.length; j++)
+    if (overlap(on[i].id, L[on[i].id], on[j].id, L[on[j].id])) return false;
+  return true;
+}
+const themeOf = (id) => {
+  const w = id === "all" ? {} : S.L[id];
+  const st = (w && w.style) || S.global.style, sc = (w && w.scheme) || S.global.scheme;
+  return { st: STYLES[st] ? st : "terminal", sc: SCHEMES[sc] ? sc : "cyan" };
+};
+
+// ───────── the one rule: drop → place | swap | bounce ─────────
+// returns { ok, L, swap, stored, why }
+// Drop rules. Free spot → move. On a widget → the two trade places (any sizes, both directions):
+//   same column → they swap order inside the block they share (top stays put), else each takes the other's
+//   anchor, top- or bottom-aligned, whichever fits. Nothing fits → bounce back. From storage → the hit widget is stored.
+function resolveDrop(id, c, r) {
+  const orig = S.L[id], cand = { ...orig, placed: true, c, r };
+  if (!inBounds(id, cand)) return { ok: false, why: "OFF THE GRID" };
+  const hits = WIDGETS.filter((o) => o.id !== id && S.L[o.id].placed && overlap(id, cand, o.id, S.L[o.id])).map((o) => o.id);
+  if (!hits.length) { const L = clone(S.L); L[id] = cand; return { ok: true, L }; }
+  // the widget you're aiming at = the one the dragged widget overlaps most
+  const ov = (b) => { const B = S.L[b]; return Math.min(r + span(id), B.r + span(b)) - Math.max(r, B.r); };
+  const b = hits.slice().sort((x, y) => ov(y) - ov(x))[0], B = S.L[b];
+  const attempt = (pa, pb) => {
+    const L = clone(S.L);
+    L[id] = { ...orig, placed: true, ...pa };
+    L[b] = pb ? { ...L[b], placed: true, ...pb } : { ...L[b], placed: false };
+    return valid(L) ? L : null;
+  };
+  const alignA = [B.r, B.r + span(b) - span(id)].filter((x) => x >= 0);
+  if (!orig.placed) {                                    // from storage: take its place, it goes to storage
+    for (const ra of alignA) { const L = attempt({ c: B.c, r: ra }, null); if (L) return { ok: true, L, swap: b, stored: b }; }
+    return { ok: false, why: `NO ROOM FOR ${BY[id].name} IN ${BY[b].name}'S SPOT` };
+  }
+  if (orig.c === B.c) {                                  // same column: swap the order, block top stays put
+    const top = Math.min(orig.r, B.r);
+    const L = orig.r > B.r ? attempt({ c: B.c, r: top }, { c: B.c, r: top + span(id) })
+                           : attempt({ c: B.c, r: top + span(b) }, { c: B.c, r: top });
+    if (L) return { ok: true, L, swap: b };
+  }
+  const alignB = [orig.r, orig.r + span(id) - span(b)].filter((x) => x >= 0);
+  for (const ra of alignA) for (const rb of alignB) {
+    const L = attempt({ c: B.c, r: ra }, { c: orig.c, r: rb }); if (L) return { ok: true, L, swap: b };
+  }
+  return { ok: false, why: `${BY[id].name} AND ${BY[b].name} CAN'T TRADE PLACES THERE` };
+}
+function firstFree(id) {
+  const me = S.L[id];
+  const tryAt = (c, r) => { const t = resolveDrop(id, c, r); return t.ok && !t.swap ? t : null; };
+  if (typeof me.c === "number" && typeof me.r === "number") { const t = tryAt(me.c, me.r); if (t) return t; }
+  for (let c = 0; c < cols(); c++) for (let r = 0; r + span(id) <= rows(); r++) { const t = tryAt(c, r); if (t) return t; }
+  return null;
+}
+
+// ───────── persistence ─────────
+const bridge = (m) => { try { window.webkit.messageHandlers.ctl.postMessage(m); } catch (e) { DEV.post(m); } };
+function toConfig() {
+  const widgets = {};
+  for (const w of WIDGETS) {
+    const l = S.L[w.id], p = px(l.c, l.r);
+    widgets[w.id] = { placed: !!l.placed, col: l.c, row: l.r, x: p.x, y: p.y, style: l.style || null, scheme: l.scheme || null };
+  }
+  return { v: 1, app: "WIDGET//CTL", screen: { w: S.W, h: S.H }, grid: { ...G, cols: cols(), rows: rows() }, global: S.global, widgets };
+}
+const save = () => bridge({ type: "save", config: JSON.stringify(toConfig()) });
+
+function defaults() { const L = {}; for (const w of WIDGETS) L[w.id] = { placed: true, c: w.def[0], r: w.def[1], style: null, scheme: null }; return L; }
+function load(cfg) {
+  const L = defaults(); let bumped = [];
+  if (cfg && cfg.global) S.global = { style: cfg.global.style || "terminal", scheme: cfg.global.scheme || "cyan" };
+  const ws = (cfg && cfg.widgets) || {};
+  for (const w of WIDGETS) {
+    const e = ws[w.id]; if (!e) continue;
+    let c = e.col, r = e.row;
+    if (typeof c !== "number" && typeof e.x === "number") { c = Math.round((S.W - G.M - G.CW - e.x) / G.CP); r = Math.round((e.y - top0()) / G.RP); }
+    L[w.id] = { placed: e.placed !== false, c: typeof c === "number" ? c : w.def[0], r: typeof r === "number" ? r : w.def[1], style: e.style || null, scheme: e.scheme || null };
+  }
+  // screen changed or a bad file: anything that no longer fits goes to storage instead of overlapping
+  for (const w of WIDGETS) {
+    if (!L[w.id].placed) continue;
+    const others = WIDGETS.filter((o) => o.id !== w.id && L[o.id].placed && bumped.indexOf(o.id) < 0);
+    if (!inBounds(w.id, L[w.id]) || others.some((o) => WIDGETS.indexOf(o) < WIDGETS.indexOf(w) && overlap(w.id, L[w.id], o.id, L[o.id]))) {
+      L[w.id].placed = false; bumped.push(w.id);
+    }
+  }
+  S.L = L;
+  return bumped;
+}
+
+// ───────── rendering ─────────
+const $ = (q) => document.querySelector(q);
+const rgba = (hex, a) => { const n = parseInt(hex.slice(1), 16); return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`; };
+function texCSS(s, k) {
+  if (s.tex === "grid") return `linear-gradient(${rgba(k.c, .07)} 1px,transparent 1px),linear-gradient(90deg,${rgba(k.c, .07)} 1px,transparent 1px)`;
+  if (s.tex === "scan") return `repeating-linear-gradient(0deg,${rgba(k.c, .10)} 0 1px,transparent 1px 3px)`;
+  if (s.tex === "glass") return `linear-gradient(135deg,${rgba(k.c, .18)},transparent 60%)`;
+  if (s.tex === "marble") { const v = rgba(k.dim, .45), v2 = rgba(k.dim, .25);
+    return `linear-gradient(118deg,transparent 31%,${v} 32%,transparent 34%),linear-gradient(152deg,transparent 58%,${v2} 58.6%,transparent 61%),linear-gradient(28deg,transparent 69%,${v2} 69.5%,transparent 71%),radial-gradient(ellipse at 15% 85%,${rgba(k.dim, .15)},transparent 50%)`; }
+  return "none";
+}
+function panelCSS(st, sc, full) {
+  const s = STYLES[st], k = SCHEMES[sc], f = full ? 1 : .5;
+  const shadow = s.hard ? `${Math.round(5 * f)}px ${Math.round(5 * f)}px 0 ${k.c}` : s.soft ? "0 6px 16px rgba(0,0,0,.35)" : s.glow ? `0 0 10px ${k.c}33` : "0 3px 10px rgba(0,0,0,.3)";
+  return `background:rgba(${k.bg},${Math.max(s.alpha, .6)});background-image:${texCSS(s, k)};background-size:${s.tex === "grid" ? "8px 8px" : "auto"};` +
+    `border:${s.bw}px solid ${k.c}${s.edge};border-radius:${Math.round(s.radius * f)}px;color:${k.text};` +
+    `box-shadow:${shadow}${s.tex === "scan" ? ",inset 0 0 18px rgba(0,0,0,.6)" : ""};` +
+    (k.cycle ? "animation:wctlhue 16s linear infinite;" : "");
+}
+const nameCSS = (st, sc) => { const k = SCHEMES[sc]; return `color:${k.c};${STYLES[st].glow ? `text-shadow:0 0 5px ${k.c}` : ""}`; };
+let scale = 0.4;
+
+function layoutMap() {
+  const wrap = $("#mapWrap"), mw = wrap.clientWidth, mh = wrap.clientHeight;
+  scale = Math.min(mw / S.W, mh / S.H);
+  const map = $("#map"); map.style.width = S.W * scale + "px"; map.style.height = S.H * scale + "px";
+  map.querySelectorAll(".cell,.tile").forEach((n) => n.remove());
+  const frag = document.createDocumentFragment();
+  for (let c = 0; c < cols(); c++) for (let r = 0; r < rows(); r++) {
+    const p = px(c, r), d = document.createElement("div"); d.className = "cell";
+    d.style.cssText = `left:${p.x * scale}px;top:${p.y * scale}px;width:${G.CW * scale}px;height:${(G.RP - G.GAP) * scale}px`;
+    frag.appendChild(d);
+  }
+  map.appendChild(frag);
+  for (const w of WIDGETS) if (S.L[w.id].placed) map.appendChild(tileEl(w.id));
+  $("#gridInfo").textContent = `${cols()} × ${rows()} SLOTS · ${S.W}×${S.H} PT · DROP ON A WIDGET TO SWAP`;
+}
+function tileEl(id, ghost) {
+  const w = BY[id], l = S.L[id], p = px(l.c, l.r), { st, sc } = themeOf(id), d = document.createElement("div");
+  d.className = "tile" + (S.sel === id ? " sel" : ""); d.dataset.id = id;
+  d.style.cssText = panelCSS(st, sc) + `;width:${w.w * scale}px;height:${w.h * scale}px;` + (ghost ? "" : `left:${p.x * scale}px;top:${p.y * scale}px;`);
+  d.innerHTML = `<div class="gl" style="${nameCSS(st, sc)}">${w.glyph}</div><div class="nm" style="${nameCSS(st, sc)}">${w.name}</div><div class="sz">C${l.c}·R${l.r}</div>`;
+  if (!ghost) d.addEventListener("pointerdown", (e) => startDrag(e, id, "map"));
+  return d;
+}
+function renderTray() {
+  const t = $("#tray"); t.innerHTML = "";
+  const stored = WIDGETS.filter((w) => !S.L[w.id].placed);
+  if (!stored.length) { t.innerHTML = `<div class="empty">EMPTY — DRAG A WIDGET HERE TO TAKE IT OFF THE SCREEN</div>`; return; }
+  for (const w of stored) {
+    const { st, sc } = themeOf(w.id), d = document.createElement("div");
+    d.className = "chip"; d.style.cssText = panelCSS(st, sc);
+    d.innerHTML = `<div class="nm" style="${nameCSS(st, sc)}">${w.name}</div><div class="dp" style="color:${SCHEMES[sc].c};border-color:${SCHEMES[sc].c}77">DEPLOY ▸</div>`;
+    d.addEventListener("pointerdown", (e) => { if (e.target.classList.contains("dp")) return; startDrag(e, w.id, "tray"); });
+    d.querySelector(".dp").addEventListener("click", () => deploy(w.id));
+    t.appendChild(d);
+  }
+}
+function renderSide() {
+  const box = $("#svcs"); box.innerHTML = "";
+  const row = (id, label, dot, state, ov) => {
+    const d = document.createElement("div"); d.className = "svc" + (S.sel === id ? " on" : "");
+    d.innerHTML = `<span class="dot" style="background:${dot};box-shadow:0 0 6px ${dot}"></span><span>${label}</span>${ov ? `<span class="ov">${ov}</span>` : ""}<span class="st">${state}</span>`;
+    d.addEventListener("click", (e) => { if (e.target.classList.contains("act")) return; select(id); });
+    box.appendChild(d); return d;
+  };
+  row("all", "ALL WIDGETS", SCHEMES[S.global.scheme].c, `${WIDGETS.filter((w) => S.L[w.id].placed).length}/${WIDGETS.length} LIVE`);
+  for (const w of WIDGETS) {
+    const l = S.L[w.id], { sc } = themeOf(w.id), ov = l.style || l.scheme ? "CUSTOM" : "";
+    const d = row(w.id, w.name, SCHEMES[sc].c, "", ov);
+    const b = document.createElement("span"); b.className = "btn sm act"; b.style.marginLeft = "auto";
+    b.textContent = l.placed ? "STORE" : "DEPLOY"; if (l.placed) b.classList.add("amber");
+    b.addEventListener("click", () => (l.placed ? store(w.id) : deploy(w.id)));
+    d.querySelector(".st").replaceWith(b);
+  }
+  const tgt = S.sel === "all" ? "ALL" : BY[S.sel].name;
+  $("#tgt1").textContent = $("#tgt2").textContent = "→ " + tgt;
+  const cur = themeOf(S.sel), mine = S.sel === "all" ? S.global : S.L[S.sel];
+  const sb = $("#styles"); sb.innerHTML = "";
+  for (const st of Object.keys(STYLES)) {
+    const d = document.createElement("div"); d.className = "style" + (cur.st === st ? " on" : "");
+    d.style.cssText = panelCSS(st, cur.sc);
+    d.innerHTML = `<div class="nm" style="${nameCSS(st, cur.sc)}">${st.toUpperCase()}</div>`;
+    d.addEventListener("click", () => setTheme("style", st)); sb.appendChild(d);
+  }
+  const sw = $("#schemes"); sw.innerHTML = "";
+  for (const sc of Object.keys(SCHEMES)) {
+    const k = SCHEMES[sc], wrap = document.createElement("div"), d = document.createElement("div");
+    d.className = "sw" + (cur.sc === sc ? " on" : "");
+    d.style.cssText = k.cycle ? `background:linear-gradient(90deg,#ff4f6b,#ffd84f,#3dff7f,#4fa8ff,#ff4fd8)` : `background:linear-gradient(135deg,rgba(${k.bg},1) 45%,${k.c})`;
+    d.innerHTML = `<i style="background:${k.c};box-shadow:0 0 6px ${k.c}"></i>`;
+    d.addEventListener("click", () => setTheme("scheme", sc));
+    wrap.appendChild(d); wrap.insertAdjacentHTML("beforeend", `<div class="swn">${sc.toUpperCase()}</div>`); sw.appendChild(wrap);
+  }
+  const inh = $("#inh"); inh.innerHTML = "";
+  if (S.sel === "all") {
+    const n = WIDGETS.filter((w) => S.L[w.id].style || S.L[w.id].scheme).length;
+    inh.innerHTML = `<span class="lbl">${n ? n + " WIDGET" + (n > 1 ? "S" : "") + " CUSTOM" : "EVERY WIDGET FOLLOWS THIS"}</span>`;
+    if (n) { const b = document.createElement("button"); b.className = "btn sm amber"; b.style.marginLeft = "auto"; b.textContent = "CLEAR CUSTOM";
+      b.addEventListener("click", () => { WIDGETS.forEach((w) => { S.L[w.id].style = S.L[w.id].scheme = null; }); commit("ALL WIDGETS FOLLOW THE GLOBAL THEME"); }); inh.appendChild(b); }
+  } else {
+    inh.innerHTML = `<span class="lbl">FOLLOW GLOBAL:</span>`;
+    for (const k of ["style", "scheme"]) {
+      const b = document.createElement("button"); b.className = "btn sm" + (mine[k] ? "" : " on"); b.textContent = k.toUpperCase() + (mine[k] ? "" : " ✓");
+      b.title = mine[k] ? `Drop this widget's own ${k} and follow ALL WIDGETS` : `Following the global ${k}`;
+      b.addEventListener("click", () => { S.L[S.sel][k] = null; commit(`${BY[S.sel].name} FOLLOWS THE GLOBAL ${k.toUpperCase()}`); });
+      inh.appendChild(b);
+    }
+  }
+  renderPreview();
+}
+function renderPreview() {
+  const id = S.sel === "all" ? "doubloons" : S.sel, { st, sc } = themeOf(S.sel), k = SCHEMES[sc], s = STYLES[st];
+  $("#pvName").textContent = `${st.toUpperCase()} · ${sc.toUpperCase()}`;
+  const br = s.brackets ? ["top:-1px;left:-1px;border-width:2px 0 0 2px", "top:-1px;right:-1px;border-width:2px 2px 0 0", "bottom:-1px;left:-1px;border-width:0 0 2px 2px", "bottom:-1px;right:-1px;border-width:0 2px 2px 0"]
+    .map((p) => `<div style="position:absolute;width:9px;height:9px;border:0 solid ${k.c};${p};${s.glow ? `filter:drop-shadow(0 0 3px ${k.c})` : ""}"></div>`).join("") : "";
+  const g = s.glow ? (c) => `text-shadow:0 0 8px ${c}aa` : () => "";
+  $("#pv").innerHTML = `<div style="position:absolute;inset:0;${panelCSS(st, sc, true)};padding:12px 14px">${br}
+    <div style="display:flex;justify-content:space-between;font-size:9px;letter-spacing:2px"><span style="color:${k.c};${g(k.c)}">${BY[id].name}</span><span style="color:${k.dim}">PREVIEW</span></div>
+    <div style="font-size:34px;font-weight:600;text-align:center;margin:8px 0 6px;color:${k.c};${g(k.c)}">1500<span style="font-size:18px;margin-left:5px">Ð</span></div>
+    <div style="height:1px;background:${k.c}33;margin-bottom:7px"></div>
+    <div style="display:flex;justify-content:space-between;font-size:9px;letter-spacing:1px">
+      <span style="color:${k.c}">■ OK</span><span style="color:${k.blue}">◆ INFO</span><span style="color:${k.amber}">▲ SOON</span><span style="color:${k.red}">✕ LATE</span><span style="color:${k.dim}">· DIM</span></div></div>`;
+}
+function renderAll() { layoutMap(); renderTray(); renderSide(); $("#live").textContent = S.hidden ? "○ HIDDEN" : "● LIVE"; $("#live").classList.toggle("off", S.hidden); }
+
+// ───────── actions ─────────
+let msgT = 0;
+function say(t, kind) { const m = $("#msg"); m.textContent = t; m.className = kind || ""; clearTimeout(msgT); msgT = setTimeout(() => { m.textContent = "READY"; m.className = ""; }, 5000); }
+function commit(text, kind) { save(); renderAll(); if (text) say(text, kind); }
+function select(id) { S.sel = id; renderAll(); }
+function setTheme(k, v) {
+  if (S.sel === "all") S.global[k] = v; else S.L[S.sel][k] = v;
+  commit(`${S.sel === "all" ? "ALL WIDGETS" : BY[S.sel].name} → ${k.toUpperCase()} ${v.toUpperCase()}`);
+}
+function store(id) { S.L[id].placed = false; if (S.sel === id) S.sel = id; commit(`${BY[id].name} → STORAGE (OFF SCREEN)`, "warn"); }
+function deploy(id) {
+  const t = firstFree(id);
+  if (!t) { say(`NO FREE SLOT FOR ${BY[id].name} — DRAG IT ONTO A WIDGET TO SWAP`, "err"); return; }
+  S.L = t.L; commit(`${BY[id].name} DEPLOYED → C${t.L[id].c}·R${t.L[id].r}`);
+}
+function resetLayout() { const keep = {}; WIDGETS.forEach((w) => (keep[w.id] = { style: S.L[w.id].style, scheme: S.L[w.id].scheme }));
+  S.L = defaults(); WIDGETS.forEach((w) => Object.assign(S.L[w.id], keep[w.id])); commit("LAYOUT RESET TO THE ORIGINAL STACK (THEMES KEPT)"); }
+
+// ───────── drag & drop ─────────
+let drag = null;
+function startDrag(e, id, from) {
+  if (e.button !== 0) return;
+  e.preventDefault();
+  drag = { id, from, sx: e.clientX, sy: e.clientY, moved: false, src: e.currentTarget, target: null };
+  const r = e.currentTarget.getBoundingClientRect();
+  const gw = BY[id].w * scale, gh = BY[id].h * scale;
+  drag.ox = from === "map" ? e.clientX - r.left : gw / 2; drag.oy = from === "map" ? e.clientY - r.top : Math.min(14, gh / 2);
+  window.addEventListener("pointermove", onMove);
+  window.addEventListener("pointerup", onUp, { once: true });
+}
+function onMove(e) {
+  if (!drag) return;
+  if (!drag.moved) {
+    if (Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) < 4) return;
+    drag.moved = true; drag.src.classList.add("ghosted");
+    const g = $("#ghost"); g.innerHTML = ""; const t = tileEl(drag.id, true); t.style.position = "relative"; t.classList.remove("sel"); g.appendChild(t); g.style.display = "block";
+  }
+  const g = $("#ghost"); g.style.left = e.clientX - drag.ox + "px"; g.style.top = e.clientY - drag.oy + "px";
+  drag.target = targetAt(e); showTarget(drag.target);
+}
+function targetAt(e) {
+  const tr = $("#tray").getBoundingClientRect();
+  if (e.clientX >= tr.left && e.clientX <= tr.right && e.clientY >= tr.top && e.clientY <= tr.bottom) return { kind: "tray" };
+  const mr = $("#map").getBoundingClientRect(), pad = 30;
+  if (e.clientX < mr.left - pad || e.clientX > mr.right + pad || e.clientY < mr.top - pad || e.clientY > mr.bottom + pad) return { kind: "none" };
+  const gx = (e.clientX - drag.ox - mr.left) / scale, gy = (e.clientY - drag.oy - mr.top) / scale;
+  const c = Math.min(cols() - 1, Math.max(0, Math.round((S.W - G.M - G.CW - gx) / G.CP)));
+  const r = Math.min(rows() - span(drag.id), Math.max(0, Math.round((gy - top0()) / G.RP)));
+  return { kind: "map", c, r, res: resolveDrop(drag.id, c, r) };
+}
+function showTarget(t) {
+  const pv = $("#preview"), sm = $("#swapMark");
+  $("#tray").classList.toggle("hot", t.kind === "tray");
+  pv.style.display = sm.style.display = "none";
+  if (t.kind !== "map") return;
+  const land = t.res.ok ? t.res.L[drag.id] : { c: t.c, r: t.r }, p = px(land.c, land.r);
+  pv.className = t.res.ok ? (t.res.swap ? "swap" : "free") : "bad";
+  pv.style.cssText = `display:block;left:${p.x * scale}px;top:${p.y * scale}px;width:${BY[drag.id].w * scale}px;height:${BY[drag.id].h * scale}px`;
+  if (t.res.ok && t.res.swap && !t.res.stored) {
+    const b = t.res.swap, q = px(t.res.L[b].c, t.res.L[b].r);
+    sm.style.cssText = `display:block;left:${q.x * scale}px;top:${q.y * scale}px;width:${BY[b].w * scale}px;height:${BY[b].h * scale}px`;
+  }
+}
+function onUp() {
+  window.removeEventListener("pointermove", onMove);
+  const d = drag; drag = null;
+  $("#ghost").style.display = "none"; $("#preview").style.display = "none"; $("#swapMark").style.display = "none"; $("#tray").classList.remove("hot");
+  if (!d) return;
+  d.src.classList.remove("ghosted");
+  if (!d.moved) { if (d.from === "map") select(d.id); return; }
+  const t = d.target || { kind: "none" }, nm = BY[d.id].name;
+  if (t.kind === "tray") { if (S.L[d.id].placed) store(d.id); return; }
+  if (t.kind !== "map") { say(`${nm} RETURNED`, "warn"); renderAll(); return; }
+  const res = t.res;
+  if (!res.ok) { say(`${res.why} — ${nm} RETURNED ${d.from === "tray" ? "TO STORAGE" : "TO ITS SPOT"}`, "err"); renderAll(); return; }
+  S.L = res.L;
+  commit(res.stored ? `${nm} DEPLOYED · ${BY[res.swap].name} → STORAGE` : res.swap ? `SWAPPED ${nm} ⇄ ${BY[res.swap].name}` : `${nm} → C${t.c}·R${t.r}`);
+}
+
+// ───────── window chrome ─────────
+let mv = null;
+$("#bar").addEventListener("pointerdown", (e) => { if (e.target.closest("#x,#live,#sync")) return; mv = { x: e.screenX, y: e.screenY }; });
+window.addEventListener("pointermove", (e) => { if (!mv) return; const dx = e.screenX - mv.x, dy = e.screenY - mv.y; if (!dx && !dy) return; mv = { x: e.screenX, y: e.screenY }; bridge({ type: "move", dx, dy }); });
+window.addEventListener("pointerup", () => (mv = null));
+$("#x").addEventListener("click", () => bridge({ type: "close" }));
+$("#live").addEventListener("click", () => bridge({ type: "toggleHidden" }));
+$("#sync").addEventListener("click", () => { bridge({ type: "refresh" }); say("ALL WIDGETS RE-RAN"); });
+$("#reset").addEventListener("click", resetLayout);
+window.addEventListener("keydown", (e) => { if (e.key === "Escape") bridge({ type: "close" }); });
+window.addEventListener("resize", () => layoutMap());
+
+// ───────── called by the app ─────────
+window.WCTL = {
+  boot(d) {
+    if (d.screen) { S.W = Math.round(d.screen.w); S.H = Math.round(d.screen.h); }
+    S.hidden = !!d.hidden;
+    let cfg = null; try { cfg = d.config ? JSON.parse(d.config) : null; } catch (e) { cfg = null; }
+    const bumped = load(cfg);
+    renderAll();
+    if (!cfg) say("NO LAYOUT FILE YET — SHOWING THE ORIGINAL STACK. ANY CHANGE SAVES IT.");
+    else if (bumped.length) { save(); say(`${bumped.map((b) => BY[b].name).join(", ")} DIDN'T FIT THIS SCREEN → STORAGE`, "warn"); }
+    else { save(); say("LOADED"); }
+  },
+  setHidden(h) { S.hidden = !!h; renderAll(); say(h ? "ALL WIDGETS HIDDEN (⌃⌥⌘W)" : "ALL WIDGETS LIVE", h ? "warn" : ""); },
+  error(t) { say("ERR: " + t, "err"); },
+};
+// browser-only stand-in for the app bridge (opening ctl.html directly)
+const DEV = { post(m) { if (m.type === "save") { try { localStorage.setItem("wctl", m.config); } catch (e) {} } if (m.type === "toggleHidden") WCTL.setHidden(!S.hidden); DEV.last = m; } };
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.ctl) bridge({ type: "ready" });
+  else { let c = null; try { c = localStorage.getItem("wctl"); } catch (e) {} WCTL.boot({ screen: { w: 1470, h: 919 }, config: c, hidden: false }); }
+});
+</script>
+</body>
+</html>
