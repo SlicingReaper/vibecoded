@@ -1,0 +1,1907 @@
+{
+ "_about": "QUOTE//DAY pool — 300 built-in quotes (200 Bible verses, KJV · 100 others). Edit freely; your own quotes, likes and dislikes live in quotes-user.json, not here. Keep ids stable so likes stay attached.",
+ "version": 1,
+ "translation": "KJV",
+ "quotes": [
+  {
+   "id": "c001",
+   "text": "Go to the ant, thou sluggard; consider her ways, and be wise.",
+   "ref": "Proverbs 6:6",
+   "xian": true
+  },
+  {
+   "id": "c002",
+   "text": "Yet a little sleep, a little slumber, a little folding of the hands to sleep: so shall thy poverty come as one that travelleth, and thy want as an armed man.",
+   "ref": "Proverbs 6:10–11",
+   "xian": true
+  },
+  {
+   "id": "c003",
+   "text": "The hand of the diligent shall bear rule: but the slothful shall be under tribute.",
+   "ref": "Proverbs 12:24",
+   "xian": true
+  },
+  {
+   "id": "c004",
+   "text": "In all labour there is profit: but the talk of the lips tendeth only to penury.",
+   "ref": "Proverbs 14:23",
+   "xian": true
+  },
+  {
+   "id": "c005",
+   "text": "The soul of the sluggard desireth, and hath nothing: but the soul of the diligent shall be made fat.",
+   "ref": "Proverbs 13:4",
+   "xian": true
+  },
+  {
+   "id": "c006",
+   "text": "He becometh poor that dealeth with a slack hand: but the hand of the diligent maketh rich.",
+   "ref": "Proverbs 10:4",
+   "xian": true
+  },
+  {
+   "id": "c007",
+   "text": "Seest thou a man diligent in his business? he shall stand before kings; he shall not stand before mean men.",
+   "ref": "Proverbs 22:29",
+   "xian": true
+  },
+  {
+   "id": "c008",
+   "text": "Commit thy works unto the LORD, and thy thoughts shall be established.",
+   "ref": "Proverbs 16:3",
+   "xian": true
+  },
+  {
+   "id": "c009",
+   "text": "A man's heart deviseth his way: but the LORD directeth his steps.",
+   "ref": "Proverbs 16:9",
+   "xian": true
+  },
+  {
+   "id": "c010",
+   "text": "Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.",
+   "ref": "Proverbs 3:5–6",
+   "xian": true
+  },
+  {
+   "id": "c011",
+   "text": "Keep thy heart with all diligence; for out of it are the issues of life.",
+   "ref": "Proverbs 4:23",
+   "xian": true
+  },
+  {
+   "id": "c012",
+   "text": "Let thine eyes look right on, and let thine eyelids look straight before thee.",
+   "ref": "Proverbs 4:25",
+   "xian": true
+  },
+  {
+   "id": "c013",
+   "text": "Iron sharpeneth iron; so a man sharpeneth the countenance of his friend.",
+   "ref": "Proverbs 27:17",
+   "xian": true
+  },
+  {
+   "id": "c014",
+   "text": "He that is slow to anger is better than the mighty; and he that ruleth his spirit than he that taketh a city.",
+   "ref": "Proverbs 16:32",
+   "xian": true
+  },
+  {
+   "id": "c015",
+   "text": "He that hath no rule over his own spirit is like a city that is broken down, and without walls.",
+   "ref": "Proverbs 25:28",
+   "xian": true
+  },
+  {
+   "id": "c016",
+   "text": "For a just man falleth seven times, and riseth up again.",
+   "ref": "Proverbs 24:16",
+   "xian": true
+  },
+  {
+   "id": "c017",
+   "text": "If thou faint in the day of adversity, thy strength is small.",
+   "ref": "Proverbs 24:10",
+   "xian": true
+  },
+  {
+   "id": "c018",
+   "text": "A merry heart doeth good like a medicine: but a broken spirit drieth the bones.",
+   "ref": "Proverbs 17:22",
+   "xian": true
+  },
+  {
+   "id": "c019",
+   "text": "The wicked flee when no man pursueth: but the righteous are bold as a lion.",
+   "ref": "Proverbs 28:1",
+   "xian": true
+  },
+  {
+   "id": "c020",
+   "text": "The thoughts of the diligent tend only to plenteousness; but of every one that is hasty only to want.",
+   "ref": "Proverbs 21:5",
+   "xian": true
+  },
+  {
+   "id": "c021",
+   "text": "Love not sleep, lest thou come to poverty; open thine eyes, and thou shalt be satisfied with bread.",
+   "ref": "Proverbs 20:13",
+   "xian": true
+  },
+  {
+   "id": "c022",
+   "text": "Wealth gotten by vanity shall be diminished: but he that gathereth by labour shall increase.",
+   "ref": "Proverbs 13:11",
+   "xian": true
+  },
+  {
+   "id": "c023",
+   "text": "He that walketh with wise men shall be wise: but a companion of fools shall be destroyed.",
+   "ref": "Proverbs 13:20",
+   "xian": true
+  },
+  {
+   "id": "c024",
+   "text": "Where there is no vision, the people perish.",
+   "ref": "Proverbs 29:18",
+   "xian": true
+  },
+  {
+   "id": "c025",
+   "text": "The glory of young men is their strength: and the beauty of old men is the grey head.",
+   "ref": "Proverbs 20:29",
+   "xian": true
+  },
+  {
+   "id": "c026",
+   "text": "Be not wise in thine own eyes: fear the LORD, and depart from evil. It shall be health to thy navel, and marrow to thy bones.",
+   "ref": "Proverbs 3:7–8",
+   "xian": true
+  },
+  {
+   "id": "c027",
+   "text": "Boast not thyself of to morrow; for thou knowest not what a day may bring forth.",
+   "ref": "Proverbs 27:1",
+   "xian": true
+  },
+  {
+   "id": "c028",
+   "text": "Hope deferred maketh the heart sick: but when the desire cometh, it is a tree of life.",
+   "ref": "Proverbs 13:12",
+   "xian": true
+  },
+  {
+   "id": "c029",
+   "text": "Prepare thy work without, and make it fit for thyself in the field; and afterwards build thine house.",
+   "ref": "Proverbs 24:27",
+   "xian": true
+  },
+  {
+   "id": "c030",
+   "text": "Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise.",
+   "ref": "Proverbs 20:1",
+   "xian": true
+  },
+  {
+   "id": "c031",
+   "text": "Put a knife to thy throat, if thou be a man given to appetite.",
+   "ref": "Proverbs 23:2",
+   "xian": true
+  },
+  {
+   "id": "c032",
+   "text": "The name of the LORD is a strong tower: the righteous runneth into it, and is safe.",
+   "ref": "Proverbs 18:10",
+   "xian": true
+  },
+  {
+   "id": "c033",
+   "text": "Whatsoever thy hand findeth to do, do it with thy might.",
+   "ref": "Ecclesiastes 9:10",
+   "xian": true
+  },
+  {
+   "id": "c034",
+   "text": "He that observeth the wind shall not sow; and he that regardeth the clouds shall not reap.",
+   "ref": "Ecclesiastes 11:4",
+   "xian": true
+  },
+  {
+   "id": "c035",
+   "text": "In the morning sow thy seed, and in the evening withhold not thine hand.",
+   "ref": "Ecclesiastes 11:6",
+   "xian": true
+  },
+  {
+   "id": "c036",
+   "text": "Better is the end of a thing than the beginning thereof: and the patient in spirit is better than the proud in spirit.",
+   "ref": "Ecclesiastes 7:8",
+   "xian": true
+  },
+  {
+   "id": "c037",
+   "text": "Two are better than one; because they have a good reward for their labour. For if they fall, the one will lift up his fellow.",
+   "ref": "Ecclesiastes 4:9–10",
+   "xian": true
+  },
+  {
+   "id": "c038",
+   "text": "A threefold cord is not quickly broken.",
+   "ref": "Ecclesiastes 4:12",
+   "xian": true
+  },
+  {
+   "id": "c039",
+   "text": "The sleep of a labouring man is sweet.",
+   "ref": "Ecclesiastes 5:12",
+   "xian": true
+  },
+  {
+   "id": "c040",
+   "text": "Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me.",
+   "ref": "Psalm 23:4",
+   "xian": true
+  },
+  {
+   "id": "c041",
+   "text": "The LORD is my light and my salvation; whom shall I fear? the LORD is the strength of my life; of whom shall I be afraid?",
+   "ref": "Psalm 27:1",
+   "xian": true
+  },
+  {
+   "id": "c042",
+   "text": "Wait on the LORD: be of good courage, and he shall strengthen thine heart.",
+   "ref": "Psalm 27:14",
+   "xian": true
+  },
+  {
+   "id": "c043",
+   "text": "God is our refuge and strength, a very present help in trouble.",
+   "ref": "Psalm 46:1",
+   "xian": true
+  },
+  {
+   "id": "c044",
+   "text": "This is the day which the LORD hath made; we will rejoice and be glad in it.",
+   "ref": "Psalm 118:24",
+   "xian": true
+  },
+  {
+   "id": "c045",
+   "text": "I will lift up mine eyes unto the hills, from whence cometh my help. My help cometh from the LORD, which made heaven and earth.",
+   "ref": "Psalm 121:1–2",
+   "xian": true
+  },
+  {
+   "id": "c046",
+   "text": "Weeping may endure for a night, but joy cometh in the morning.",
+   "ref": "Psalm 30:5",
+   "xian": true
+  },
+  {
+   "id": "c047",
+   "text": "Thy word is a lamp unto my feet, and a light unto my path.",
+   "ref": "Psalm 119:105",
+   "xian": true
+  },
+  {
+   "id": "c048",
+   "text": "So teach us to number our days, that we may apply our hearts unto wisdom.",
+   "ref": "Psalm 90:12",
+   "xian": true
+  },
+  {
+   "id": "c049",
+   "text": "Commit thy way unto the LORD; trust also in him; and he shall bring it to pass.",
+   "ref": "Psalm 37:5",
+   "xian": true
+  },
+  {
+   "id": "c050",
+   "text": "Though he fall, he shall not be utterly cast down: for the LORD upholdeth him with his hand.",
+   "ref": "Psalm 37:24",
+   "xian": true
+  },
+  {
+   "id": "c051",
+   "text": "Blessed be the LORD my strength, which teacheth my hands to war, and my fingers to fight.",
+   "ref": "Psalm 144:1",
+   "xian": true
+  },
+  {
+   "id": "c052",
+   "text": "It is God that girdeth me with strength, and maketh my way perfect.",
+   "ref": "Psalm 18:32",
+   "xian": true
+  },
+  {
+   "id": "c053",
+   "text": "For by thee I have run through a troop; and by my God have I leaped over a wall.",
+   "ref": "Psalm 18:29",
+   "xian": true
+  },
+  {
+   "id": "c054",
+   "text": "I will praise thee; for I am fearfully and wonderfully made.",
+   "ref": "Psalm 139:14",
+   "xian": true
+  },
+  {
+   "id": "c055",
+   "text": "Create in me a clean heart, O God; and renew a right spirit within me.",
+   "ref": "Psalm 51:10",
+   "xian": true
+  },
+  {
+   "id": "c056",
+   "text": "My flesh and my heart faileth: but God is the strength of my heart, and my portion for ever.",
+   "ref": "Psalm 73:26",
+   "xian": true
+  },
+  {
+   "id": "c057",
+   "text": "Why art thou cast down, O my soul? and why art thou disquieted within me? hope thou in God: for I shall yet praise him.",
+   "ref": "Psalm 42:11",
+   "xian": true
+  },
+  {
+   "id": "c058",
+   "text": "Cast thy burden upon the LORD, and he shall sustain thee.",
+   "ref": "Psalm 55:22",
+   "xian": true
+  },
+  {
+   "id": "c059",
+   "text": "They that sow in tears shall reap in joy.",
+   "ref": "Psalm 126:5",
+   "xian": true
+  },
+  {
+   "id": "c060",
+   "text": "He that goeth forth and weepeth, bearing precious seed, shall doubtless come again with rejoicing, bringing his sheaves with him.",
+   "ref": "Psalm 126:6",
+   "xian": true
+  },
+  {
+   "id": "c061",
+   "text": "For thou shalt eat the labour of thine hands: happy shalt thou be, and it shall be well with thee.",
+   "ref": "Psalm 128:2",
+   "xian": true
+  },
+  {
+   "id": "c062",
+   "text": "Many are the afflictions of the righteous: but the LORD delivereth him out of them all.",
+   "ref": "Psalm 34:19",
+   "xian": true
+  },
+  {
+   "id": "c063",
+   "text": "Be of good courage, and he shall strengthen your heart, all ye that hope in the LORD.",
+   "ref": "Psalm 31:24",
+   "xian": true
+  },
+  {
+   "id": "c064",
+   "text": "He shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper.",
+   "ref": "Psalm 1:3",
+   "xian": true
+  },
+  {
+   "id": "c065",
+   "text": "He brought me up also out of an horrible pit, out of the miry clay, and set my feet upon a rock, and established my goings.",
+   "ref": "Psalm 40:2",
+   "xian": true
+  },
+  {
+   "id": "c066",
+   "text": "I will both lay me down in peace, and sleep: for thou, LORD, only makest me dwell in safety.",
+   "ref": "Psalm 4:8",
+   "xian": true
+  },
+  {
+   "id": "c067",
+   "text": "I have set the LORD always before me: because he is at my right hand, I shall not be moved.",
+   "ref": "Psalm 16:8",
+   "xian": true
+  },
+  {
+   "id": "c068",
+   "text": "Through God we shall do valiantly.",
+   "ref": "Psalm 60:12",
+   "xian": true
+  },
+  {
+   "id": "c069",
+   "text": "It is good for me that I have been afflicted; that I might learn thy statutes.",
+   "ref": "Psalm 119:71",
+   "xian": true
+  },
+  {
+   "id": "c070",
+   "text": "I will run the way of thy commandments, when thou shalt enlarge my heart.",
+   "ref": "Psalm 119:32",
+   "xian": true
+  },
+  {
+   "id": "c071",
+   "text": "Cause me to hear thy lovingkindness in the morning; for in thee do I trust: cause me to know the way wherein I should walk.",
+   "ref": "Psalm 143:8",
+   "xian": true
+  },
+  {
+   "id": "c072",
+   "text": "My voice shalt thou hear in the morning, O LORD; in the morning will I direct my prayer unto thee, and will look up.",
+   "ref": "Psalm 5:3",
+   "xian": true
+  },
+  {
+   "id": "c073",
+   "text": "But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint.",
+   "ref": "Isaiah 40:31",
+   "xian": true
+  },
+  {
+   "id": "c074",
+   "text": "He giveth power to the faint; and to them that have no might he increaseth strength.",
+   "ref": "Isaiah 40:29",
+   "xian": true
+  },
+  {
+   "id": "c075",
+   "text": "Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee.",
+   "ref": "Isaiah 41:10",
+   "xian": true
+  },
+  {
+   "id": "c076",
+   "text": "Remember ye not the former things, neither consider the things of old. Behold, I will do a new thing.",
+   "ref": "Isaiah 43:18–19",
+   "xian": true
+  },
+  {
+   "id": "c077",
+   "text": "For the Lord GOD will help me; therefore shall I not be confounded: therefore have I set my face like a flint.",
+   "ref": "Isaiah 50:7",
+   "xian": true
+  },
+  {
+   "id": "c078",
+   "text": "Arise, shine; for thy light is come.",
+   "ref": "Isaiah 60:1",
+   "xian": true
+  },
+  {
+   "id": "c079",
+   "text": "Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee.",
+   "ref": "Isaiah 26:3",
+   "xian": true
+  },
+  {
+   "id": "c080",
+   "text": "Also I heard the voice of the Lord, saying, Whom shall I send, and who will go for us? Then said I, Here am I; send me.",
+   "ref": "Isaiah 6:8",
+   "xian": true
+  },
+  {
+   "id": "c081",
+   "text": "In quietness and in confidence shall be your strength.",
+   "ref": "Isaiah 30:15",
+   "xian": true
+  },
+  {
+   "id": "c082",
+   "text": "For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end.",
+   "ref": "Jeremiah 29:11",
+   "xian": true
+  },
+  {
+   "id": "c083",
+   "text": "If thou hast run with the footmen, and they have wearied thee, then how canst thou contend with horses?",
+   "ref": "Jeremiah 12:5",
+   "xian": true
+  },
+  {
+   "id": "c084",
+   "text": "It is of the LORD's mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.",
+   "ref": "Lamentations 3:22–23",
+   "xian": true
+  },
+  {
+   "id": "c085",
+   "text": "It is good for a man that he bear the yoke in his youth.",
+   "ref": "Lamentations 3:27",
+   "xian": true
+  },
+  {
+   "id": "c086",
+   "text": "Be strong and of a good courage; be not afraid, neither be thou dismayed: for the LORD thy God is with thee whithersoever thou goest.",
+   "ref": "Joshua 1:9",
+   "xian": true
+  },
+  {
+   "id": "c087",
+   "text": "Be strong and of a good courage, fear not... for the LORD thy God, he it is that doth go with thee; he will not fail thee, nor forsake thee.",
+   "ref": "Deuteronomy 31:6",
+   "xian": true
+  },
+  {
+   "id": "c088",
+   "text": "Six days shalt thou labour, and do all thy work.",
+   "ref": "Exodus 20:9",
+   "xian": true
+  },
+  {
+   "id": "c089",
+   "text": "The joy of the LORD is your strength.",
+   "ref": "Nehemiah 8:10",
+   "xian": true
+  },
+  {
+   "id": "c090",
+   "text": "So built we the wall... for the people had a mind to work.",
+   "ref": "Nehemiah 4:6",
+   "xian": true
+  },
+  {
+   "id": "c091",
+   "text": "I am doing a great work, so that I cannot come down.",
+   "ref": "Nehemiah 6:3",
+   "xian": true
+  },
+  {
+   "id": "c092",
+   "text": "The LORD seeth not as man seeth; for man looketh on the outward appearance, but the LORD looketh on the heart.",
+   "ref": "1 Samuel 16:7",
+   "xian": true
+  },
+  {
+   "id": "c093",
+   "text": "But David encouraged himself in the LORD his God.",
+   "ref": "1 Samuel 30:6",
+   "xian": true
+  },
+  {
+   "id": "c094",
+   "text": "Be thou strong therefore, and shew thyself a man.",
+   "ref": "1 Kings 2:2",
+   "xian": true
+  },
+  {
+   "id": "c095",
+   "text": "Be ye strong therefore, and let not your hands be weak: for your work shall be rewarded.",
+   "ref": "2 Chronicles 15:7",
+   "xian": true
+  },
+  {
+   "id": "c096",
+   "text": "But he knoweth the way that I take: when he hath tried me, I shall come forth as gold.",
+   "ref": "Job 23:10",
+   "xian": true
+  },
+  {
+   "id": "c097",
+   "text": "Though thy beginning was small, yet thy latter end should greatly increase.",
+   "ref": "Job 8:7",
+   "xian": true
+  },
+  {
+   "id": "c098",
+   "text": "Write the vision, and make it plain upon tables, that he may run that readeth it.",
+   "ref": "Habakkuk 2:2",
+   "xian": true
+  },
+  {
+   "id": "c099",
+   "text": "The LORD God is my strength, and he will make my feet like hinds' feet, and he will make me to walk upon mine high places.",
+   "ref": "Habakkuk 3:19",
+   "xian": true
+  },
+  {
+   "id": "c100",
+   "text": "For who hath despised the day of small things?",
+   "ref": "Zechariah 4:10",
+   "xian": true
+  },
+  {
+   "id": "c101",
+   "text": "Be strong, all ye people of the land, saith the LORD, and work: for I am with you.",
+   "ref": "Haggai 2:4",
+   "xian": true
+  },
+  {
+   "id": "c102",
+   "text": "Rejoice not against me, O mine enemy: when I fall, I shall arise; when I sit in darkness, the LORD shall be a light unto me.",
+   "ref": "Micah 7:8",
+   "xian": true
+  },
+  {
+   "id": "c103",
+   "text": "What doth the LORD require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?",
+   "ref": "Micah 6:8",
+   "xian": true
+  },
+  {
+   "id": "c104",
+   "text": "But Daniel purposed in his heart that he would not defile himself with the portion of the king's meat, nor with the wine which he drank.",
+   "ref": "Daniel 1:8",
+   "xian": true
+  },
+  {
+   "id": "c105",
+   "text": "Prove thy servants, I beseech thee, ten days; and let them give us pulse to eat, and water to drink.",
+   "ref": "Daniel 1:12",
+   "xian": true
+  },
+  {
+   "id": "c106",
+   "text": "In the sweat of thy face shalt thou eat bread.",
+   "ref": "Genesis 3:19",
+   "xian": true
+  },
+  {
+   "id": "c107",
+   "text": "But as for you, ye thought evil against me; but God meant it unto good.",
+   "ref": "Genesis 50:20",
+   "xian": true
+  },
+  {
+   "id": "c108",
+   "text": "I can do all things through Christ which strengtheneth me.",
+   "ref": "Philippians 4:13",
+   "xian": true
+  },
+  {
+   "id": "c109",
+   "text": "Forgetting those things which are behind, and reaching forth unto those things which are before, I press toward the mark for the prize.",
+   "ref": "Philippians 3:13–14",
+   "xian": true
+  },
+  {
+   "id": "c110",
+   "text": "Whatsoever things are true, whatsoever things are honest, whatsoever things are just, whatsoever things are pure... think on these things.",
+   "ref": "Philippians 4:8",
+   "xian": true
+  },
+  {
+   "id": "c111",
+   "text": "Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.",
+   "ref": "Philippians 4:6",
+   "xian": true
+  },
+  {
+   "id": "c112",
+   "text": "I have learned, in whatsoever state I am, therewith to be content.",
+   "ref": "Philippians 4:11",
+   "xian": true
+  },
+  {
+   "id": "c113",
+   "text": "He which hath begun a good work in you will perform it until the day of Jesus Christ.",
+   "ref": "Philippians 1:6",
+   "xian": true
+  },
+  {
+   "id": "c114",
+   "text": "And whatsoever ye do, do it heartily, as to the Lord, and not unto men.",
+   "ref": "Colossians 3:23",
+   "xian": true
+  },
+  {
+   "id": "c115",
+   "text": "Know ye not that they which run in a race run all, but one receiveth the prize? So run, that ye may obtain.",
+   "ref": "1 Corinthians 9:24",
+   "xian": true
+  },
+  {
+   "id": "c116",
+   "text": "And every man that striveth for the mastery is temperate in all things.",
+   "ref": "1 Corinthians 9:25",
+   "xian": true
+  },
+  {
+   "id": "c117",
+   "text": "But I keep under my body, and bring it into subjection.",
+   "ref": "1 Corinthians 9:27",
+   "xian": true
+  },
+  {
+   "id": "c118",
+   "text": "Whether therefore ye eat, or drink, or whatsoever ye do, do all to the glory of God.",
+   "ref": "1 Corinthians 10:31",
+   "xian": true
+  },
+  {
+   "id": "c119",
+   "text": "Watch ye, stand fast in the faith, quit you like men, be strong.",
+   "ref": "1 Corinthians 16:13",
+   "xian": true
+  },
+  {
+   "id": "c120",
+   "text": "Be ye stedfast, unmoveable, always abounding in the work of the Lord, forasmuch as ye know that your labour is not in vain in the Lord.",
+   "ref": "1 Corinthians 15:58",
+   "xian": true
+  },
+  {
+   "id": "c121",
+   "text": "God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape.",
+   "ref": "1 Corinthians 10:13",
+   "xian": true
+  },
+  {
+   "id": "c122",
+   "text": "We are troubled on every side, yet not distressed; we are perplexed, but not in despair; persecuted, but not forsaken; cast down, but not destroyed.",
+   "ref": "2 Corinthians 4:8–9",
+   "xian": true
+  },
+  {
+   "id": "c123",
+   "text": "For which cause we faint not; but though our outward man perish, yet the inward man is renewed day by day.",
+   "ref": "2 Corinthians 4:16",
+   "xian": true
+  },
+  {
+   "id": "c124",
+   "text": "My grace is sufficient for thee: for my strength is made perfect in weakness.",
+   "ref": "2 Corinthians 12:9",
+   "xian": true
+  },
+  {
+   "id": "c125",
+   "text": "For when I am weak, then am I strong.",
+   "ref": "2 Corinthians 12:10",
+   "xian": true
+  },
+  {
+   "id": "c126",
+   "text": "If any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.",
+   "ref": "2 Corinthians 5:17",
+   "xian": true
+  },
+  {
+   "id": "c127",
+   "text": "For we walk by faith, not by sight.",
+   "ref": "2 Corinthians 5:7",
+   "xian": true
+  },
+  {
+   "id": "c128",
+   "text": "He which soweth sparingly shall reap also sparingly; and he which soweth bountifully shall reap also bountifully.",
+   "ref": "2 Corinthians 9:6",
+   "xian": true
+  },
+  {
+   "id": "c129",
+   "text": "And let us not be weary in well doing: for in due season we shall reap, if we faint not.",
+   "ref": "Galatians 6:9",
+   "xian": true
+  },
+  {
+   "id": "c130",
+   "text": "Be not deceived; God is not mocked: for whatsoever a man soweth, that shall he also reap.",
+   "ref": "Galatians 6:7",
+   "xian": true
+  },
+  {
+   "id": "c131",
+   "text": "Ye did run well; who did hinder you?",
+   "ref": "Galatians 5:7",
+   "xian": true
+  },
+  {
+   "id": "c132",
+   "text": "Finally, my brethren, be strong in the Lord, and in the power of his might.",
+   "ref": "Ephesians 6:10",
+   "xian": true
+  },
+  {
+   "id": "c133",
+   "text": "Put on the whole armour of God, that ye may be able to stand.",
+   "ref": "Ephesians 6:11",
+   "xian": true
+  },
+  {
+   "id": "c134",
+   "text": "Redeeming the time, because the days are evil.",
+   "ref": "Ephesians 5:16",
+   "xian": true
+  },
+  {
+   "id": "c135",
+   "text": "Let him labour, working with his hands the thing which is good, that he may have to give to him that needeth.",
+   "ref": "Ephesians 4:28",
+   "xian": true
+  },
+  {
+   "id": "c136",
+   "text": "For we are his workmanship, created in Christ Jesus unto good works.",
+   "ref": "Ephesians 2:10",
+   "xian": true
+  },
+  {
+   "id": "c137",
+   "text": "For God hath not given us the spirit of fear; but of power, and of love, and of a sound mind.",
+   "ref": "2 Timothy 1:7",
+   "xian": true
+  },
+  {
+   "id": "c138",
+   "text": "Thou therefore endure hardness, as a good soldier of Jesus Christ.",
+   "ref": "2 Timothy 2:3",
+   "xian": true
+  },
+  {
+   "id": "c139",
+   "text": "Study to shew thyself approved unto God, a workman that needeth not to be ashamed.",
+   "ref": "2 Timothy 2:15",
+   "xian": true
+  },
+  {
+   "id": "c140",
+   "text": "I have fought a good fight, I have finished my course, I have kept the faith.",
+   "ref": "2 Timothy 4:7",
+   "xian": true
+  },
+  {
+   "id": "c141",
+   "text": "Let no man despise thy youth; but be thou an example of the believers, in word, in conversation, in charity, in spirit, in faith, in purity.",
+   "ref": "1 Timothy 4:12",
+   "xian": true
+  },
+  {
+   "id": "c142",
+   "text": "But godliness with contentment is great gain.",
+   "ref": "1 Timothy 6:6",
+   "xian": true
+  },
+  {
+   "id": "c143",
+   "text": "Study to be quiet, and to do your own business, and to work with your own hands.",
+   "ref": "1 Thessalonians 4:11",
+   "xian": true
+  },
+  {
+   "id": "c144",
+   "text": "Rejoice evermore. Pray without ceasing. In every thing give thanks.",
+   "ref": "1 Thessalonians 5:16–18",
+   "xian": true
+  },
+  {
+   "id": "c145",
+   "text": "If any would not work, neither should he eat.",
+   "ref": "2 Thessalonians 3:10",
+   "xian": true
+  },
+  {
+   "id": "c146",
+   "text": "But ye, brethren, be not weary in well doing.",
+   "ref": "2 Thessalonians 3:13",
+   "xian": true
+  },
+  {
+   "id": "c147",
+   "text": "Let us lay aside every weight, and the sin which doth so easily beset us, and let us run with patience the race that is set before us.",
+   "ref": "Hebrews 12:1",
+   "xian": true
+  },
+  {
+   "id": "c148",
+   "text": "No chastening for the present seemeth to be joyous, but grievous: nevertheless afterward it yieldeth the peaceable fruit of righteousness unto them which are exercised thereby.",
+   "ref": "Hebrews 12:11",
+   "xian": true
+  },
+  {
+   "id": "c149",
+   "text": "Wherefore lift up the hands which hang down, and the feeble knees; and make straight paths for your feet.",
+   "ref": "Hebrews 12:12–13",
+   "xian": true
+  },
+  {
+   "id": "c150",
+   "text": "Now faith is the substance of things hoped for, the evidence of things not seen.",
+   "ref": "Hebrews 11:1",
+   "xian": true
+  },
+  {
+   "id": "c151",
+   "text": "Cast not away therefore your confidence, which hath great recompence of reward. For ye have need of patience.",
+   "ref": "Hebrews 10:35–36",
+   "xian": true
+  },
+  {
+   "id": "c152",
+   "text": "And so, after he had patiently endured, he obtained the promise.",
+   "ref": "Hebrews 6:15",
+   "xian": true
+  },
+  {
+   "id": "c153",
+   "text": "Count it all joy when ye fall into divers temptations; knowing this, that the trying of your faith worketh patience.",
+   "ref": "James 1:2–3",
+   "xian": true
+  },
+  {
+   "id": "c154",
+   "text": "Blessed is the man that endureth temptation: for when he is tried, he shall receive the crown of life.",
+   "ref": "James 1:12",
+   "xian": true
+  },
+  {
+   "id": "c155",
+   "text": "But be ye doers of the word, and not hearers only, deceiving your own selves.",
+   "ref": "James 1:22",
+   "xian": true
+  },
+  {
+   "id": "c156",
+   "text": "Even so faith, if it hath not works, is dead, being alone.",
+   "ref": "James 2:17",
+   "xian": true
+  },
+  {
+   "id": "c157",
+   "text": "Submit yourselves therefore to God. Resist the devil, and he will flee from you.",
+   "ref": "James 4:7",
+   "xian": true
+  },
+  {
+   "id": "c158",
+   "text": "Therefore to him that knoweth to do good, and doeth it not, to him it is sin.",
+   "ref": "James 4:17",
+   "xian": true
+  },
+  {
+   "id": "c159",
+   "text": "Let every man be swift to hear, slow to speak, slow to wrath.",
+   "ref": "James 1:19",
+   "xian": true
+  },
+  {
+   "id": "c160",
+   "text": "Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour.",
+   "ref": "1 Peter 5:8",
+   "xian": true
+  },
+  {
+   "id": "c161",
+   "text": "After that ye have suffered a while, make you perfect, stablish, strengthen, settle you.",
+   "ref": "1 Peter 5:10",
+   "xian": true
+  },
+  {
+   "id": "c162",
+   "text": "Wherefore gird up the loins of your mind, be sober, and hope to the end.",
+   "ref": "1 Peter 1:13",
+   "xian": true
+  },
+  {
+   "id": "c163",
+   "text": "Giving all diligence, add to your faith virtue; and to virtue knowledge; and to knowledge temperance; and to temperance patience.",
+   "ref": "2 Peter 1:5–6",
+   "xian": true
+  },
+  {
+   "id": "c164",
+   "text": "Greater is he that is in you, than he that is in the world.",
+   "ref": "1 John 4:4",
+   "xian": true
+  },
+  {
+   "id": "c165",
+   "text": "Beloved, I wish above all things that thou mayest prosper and be in health, even as thy soul prospereth.",
+   "ref": "3 John 1:2",
+   "xian": true
+  },
+  {
+   "id": "c166",
+   "text": "Behold, I make all things new.",
+   "ref": "Revelation 21:5",
+   "xian": true
+  },
+  {
+   "id": "c167",
+   "text": "Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you.",
+   "ref": "Matthew 7:7",
+   "xian": true
+  },
+  {
+   "id": "c168",
+   "text": "Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.",
+   "ref": "Matthew 7:14",
+   "xian": true
+  },
+  {
+   "id": "c169",
+   "text": "Take therefore no thought for the morrow: for the morrow shall take thought for the things of itself. Sufficient unto the day is the evil thereof.",
+   "ref": "Matthew 6:34",
+   "xian": true
+  },
+  {
+   "id": "c170",
+   "text": "But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you.",
+   "ref": "Matthew 6:33",
+   "xian": true
+  },
+  {
+   "id": "c171",
+   "text": "Come unto me, all ye that labour and are heavy laden, and I will give you rest.",
+   "ref": "Matthew 11:28",
+   "xian": true
+  },
+  {
+   "id": "c172",
+   "text": "Watch and pray, that ye enter not into temptation: the spirit indeed is willing, but the flesh is weak.",
+   "ref": "Matthew 26:41",
+   "xian": true
+  },
+  {
+   "id": "c173",
+   "text": "With men this is impossible; but with God all things are possible.",
+   "ref": "Matthew 19:26",
+   "xian": true
+  },
+  {
+   "id": "c174",
+   "text": "Well done, thou good and faithful servant: thou hast been faithful over a few things, I will make thee ruler over many things.",
+   "ref": "Matthew 25:21",
+   "xian": true
+  },
+  {
+   "id": "c175",
+   "text": "And whosoever shall compel thee to go a mile, go with him twain.",
+   "ref": "Matthew 5:41",
+   "xian": true
+  },
+  {
+   "id": "c176",
+   "text": "Whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock.",
+   "ref": "Matthew 7:24",
+   "xian": true
+  },
+  {
+   "id": "c177",
+   "text": "He that is faithful in that which is least is faithful also in much.",
+   "ref": "Luke 16:10",
+   "xian": true
+  },
+  {
+   "id": "c178",
+   "text": "No man, having put his hand to the plough, and looking back, is fit for the kingdom of God.",
+   "ref": "Luke 9:62",
+   "xian": true
+  },
+  {
+   "id": "c179",
+   "text": "For which of you, intending to build a tower, sitteth not down first, and counteth the cost?",
+   "ref": "Luke 14:28",
+   "xian": true
+  },
+  {
+   "id": "c180",
+   "text": "For unto whomsoever much is given, of him shall be much required.",
+   "ref": "Luke 12:48",
+   "xian": true
+  },
+  {
+   "id": "c181",
+   "text": "If any man will come after me, let him deny himself, and take up his cross daily, and follow me.",
+   "ref": "Luke 9:23",
+   "xian": true
+  },
+  {
+   "id": "c182",
+   "text": "And Jesus increased in wisdom and stature, and in favour with God and man.",
+   "ref": "Luke 2:52",
+   "xian": true
+  },
+  {
+   "id": "c183",
+   "text": "And in the morning, rising up a great while before day, he went out, and departed into a solitary place, and there prayed.",
+   "ref": "Mark 1:35",
+   "xian": true
+  },
+  {
+   "id": "c184",
+   "text": "All things are possible to him that believeth.",
+   "ref": "Mark 9:23",
+   "xian": true
+  },
+  {
+   "id": "c185",
+   "text": "In the world ye shall have tribulation: but be of good cheer; I have overcome the world.",
+   "ref": "John 16:33",
+   "xian": true
+  },
+  {
+   "id": "c186",
+   "text": "Let not your heart be troubled, neither let it be afraid.",
+   "ref": "John 14:27",
+   "xian": true
+  },
+  {
+   "id": "c187",
+   "text": "I must work the works of him that sent me, while it is day: the night cometh, when no man can work.",
+   "ref": "John 9:4",
+   "xian": true
+  },
+  {
+   "id": "c188",
+   "text": "I am come that they might have life, and that they might have it more abundantly.",
+   "ref": "John 10:10",
+   "xian": true
+  },
+  {
+   "id": "c189",
+   "text": "Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit.",
+   "ref": "John 12:24",
+   "xian": true
+  },
+  {
+   "id": "c190",
+   "text": "And we know that all things work together for good to them that love God.",
+   "ref": "Romans 8:28",
+   "xian": true
+  },
+  {
+   "id": "c191",
+   "text": "If God be for us, who can be against us?",
+   "ref": "Romans 8:31",
+   "xian": true
+  },
+  {
+   "id": "c192",
+   "text": "Nay, in all these things we are more than conquerors through him that loved us.",
+   "ref": "Romans 8:37",
+   "xian": true
+  },
+  {
+   "id": "c193",
+   "text": "We glory in tribulations also: knowing that tribulation worketh patience; and patience, experience; and experience, hope.",
+   "ref": "Romans 5:3–4",
+   "xian": true
+  },
+  {
+   "id": "c194",
+   "text": "And be not conformed to this world: but be ye transformed by the renewing of your mind.",
+   "ref": "Romans 12:2",
+   "xian": true
+  },
+  {
+   "id": "c195",
+   "text": "Not slothful in business; fervent in spirit; serving the Lord.",
+   "ref": "Romans 12:11",
+   "xian": true
+  },
+  {
+   "id": "c196",
+   "text": "Rejoicing in hope; patient in tribulation; continuing instant in prayer.",
+   "ref": "Romans 12:12",
+   "xian": true
+  },
+  {
+   "id": "c197",
+   "text": "The night is far spent, the day is at hand: let us therefore cast off the works of darkness, and let us put on the armour of light.",
+   "ref": "Romans 13:12",
+   "xian": true
+  },
+  {
+   "id": "c198",
+   "text": "For I reckon that the sufferings of this present time are not worthy to be compared with the glory which shall be revealed in us.",
+   "ref": "Romans 8:18",
+   "xian": true
+  },
+  {
+   "id": "c199",
+   "text": "None of these things move me, neither count I my life dear unto myself, so that I might finish my course with joy.",
+   "ref": "Acts 20:24",
+   "xian": true
+  },
+  {
+   "id": "c200",
+   "text": "For I the LORD thy God will hold thy right hand, saying unto thee, Fear not; I will help thee.",
+   "ref": "Isaiah 41:13",
+   "xian": true
+  },
+  {
+   "id": "o001",
+   "text": "You are in danger of living a life so comfortable and soft, that you will die without ever realizing your true potential.",
+   "by": "David Goggins",
+   "src": "Can't Hurt Me · 2018",
+   "xian": false
+  },
+  {
+   "id": "o002",
+   "text": "When you think you're done, you're only at 40% of what your body is capable of doing.",
+   "by": "David Goggins",
+   "src": "Can't Hurt Me · 2018",
+   "xian": false
+  },
+  {
+   "id": "o003",
+   "text": "Denial is the ultimate comfort zone.",
+   "by": "David Goggins",
+   "src": "Can't Hurt Me · 2018",
+   "xian": false
+  },
+  {
+   "id": "o004",
+   "text": "It takes relentless self-discipline to schedule suffering into your day, every day.",
+   "by": "David Goggins",
+   "src": "Can't Hurt Me · 2018",
+   "xian": false
+  },
+  {
+   "id": "o005",
+   "text": "The most important conversations you'll ever have are the ones you'll have with yourself.",
+   "by": "David Goggins",
+   "src": "Can't Hurt Me · 2018",
+   "xian": false
+  },
+  {
+   "id": "o006",
+   "text": "The only way you gain mental toughness is to do things you're not happy doing.",
+   "by": "David Goggins",
+   "src": "interviews",
+   "xian": false
+  },
+  {
+   "id": "o007",
+   "text": "Motivation is crap. Motivation comes and goes. When you're driven, whatever is in front of you will get destroyed.",
+   "by": "David Goggins",
+   "src": "interviews",
+   "xian": false
+  },
+  {
+   "id": "o008",
+   "text": "Be more than motivated, be more than driven, become literally obsessed to the point where people think you're nuts.",
+   "by": "David Goggins",
+   "src": "interviews",
+   "xian": false
+  },
+  {
+   "id": "o009",
+   "text": "Suffering is the true test of life.",
+   "by": "David Goggins",
+   "src": "Can't Hurt Me · 2018",
+   "xian": false
+  },
+  {
+   "id": "o010",
+   "text": "Discipline equals freedom.",
+   "by": "Jocko Willink",
+   "src": "Discipline Equals Freedom · 2017",
+   "xian": false
+  },
+  {
+   "id": "o011",
+   "text": "Don't count on motivation. Count on discipline.",
+   "by": "Jocko Willink",
+   "src": "Discipline Equals Freedom · 2017",
+   "xian": false
+  },
+  {
+   "id": "o012",
+   "text": "There are no bad teams, only bad leaders.",
+   "by": "Jocko Willink & Leif Babin",
+   "src": "Extreme Ownership · 2015",
+   "xian": false
+  },
+  {
+   "id": "o013",
+   "text": "The impediment to action advances action. What stands in the way becomes the way.",
+   "by": "Marcus Aurelius",
+   "src": "Meditations 5.20 · c. 170 AD",
+   "xian": false
+  },
+  {
+   "id": "o014",
+   "text": "Waste no more time arguing about what a good man should be. Be one.",
+   "by": "Marcus Aurelius",
+   "src": "Meditations 10.16 · c. 170 AD",
+   "xian": false
+  },
+  {
+   "id": "o015",
+   "text": "At dawn, when you have trouble getting out of bed, tell yourself: I have to go to work — as a human being.",
+   "by": "Marcus Aurelius",
+   "src": "Meditations 5.1 · c. 170 AD",
+   "xian": false
+  },
+  {
+   "id": "o016",
+   "text": "If it is not right, do not do it; if it is not true, do not say it.",
+   "by": "Marcus Aurelius",
+   "src": "Meditations 12.17 · c. 170 AD",
+   "xian": false
+  },
+  {
+   "id": "o017",
+   "text": "Such as are your habitual thoughts, such also will be the character of your mind; for the soul is dyed by the thoughts.",
+   "by": "Marcus Aurelius",
+   "src": "Meditations 5.16 · c. 170 AD",
+   "xian": false
+  },
+  {
+   "id": "o018",
+   "text": "Never esteem anything as of advantage to you that will make you break your word or lose your self-respect.",
+   "by": "Marcus Aurelius",
+   "src": "Meditations 3.7 · c. 170 AD",
+   "xian": false
+  },
+  {
+   "id": "o019",
+   "text": "Look within. Within is the fountain of good, and it will ever bubble up, if you will ever dig.",
+   "by": "Marcus Aurelius",
+   "src": "Meditations 7.59 · c. 170 AD",
+   "xian": false
+  },
+  {
+   "id": "o020",
+   "text": "Very little is needed to make a happy life; it is all within yourself, in your way of thinking.",
+   "by": "Marcus Aurelius",
+   "src": "Meditations 7.67 · c. 170 AD",
+   "xian": false
+  },
+  {
+   "id": "o021",
+   "text": "We suffer more often in imagination than in reality.",
+   "by": "Seneca",
+   "src": "Letters to Lucilius 13 · c. 65 AD",
+   "xian": false
+  },
+  {
+   "id": "o022",
+   "text": "It is not that we have a short time to live, but that we waste a lot of it.",
+   "by": "Seneca",
+   "src": "On the Shortness of Life · c. 49 AD",
+   "xian": false
+  },
+  {
+   "id": "o023",
+   "text": "While we are postponing, life speeds by.",
+   "by": "Seneca",
+   "src": "Letters to Lucilius 1 · c. 65 AD",
+   "xian": false
+  },
+  {
+   "id": "o024",
+   "text": "Fire tests gold, suffering tests brave men.",
+   "by": "Seneca",
+   "src": "On Providence 5 · c. 64 AD",
+   "xian": false
+  },
+  {
+   "id": "o025",
+   "text": "If a man knows not to which port he sails, no wind is favourable.",
+   "by": "Seneca",
+   "src": "Letters to Lucilius 71 · c. 65 AD",
+   "xian": false
+  },
+  {
+   "id": "o026",
+   "text": "Begin at once to live, and count each separate day as a separate life.",
+   "by": "Seneca",
+   "src": "Letters to Lucilius 101 · c. 65 AD",
+   "xian": false
+  },
+  {
+   "id": "o027",
+   "text": "As long as you live, keep learning how to live.",
+   "by": "Seneca",
+   "src": "Letters to Lucilius 76 · c. 65 AD",
+   "xian": false
+  },
+  {
+   "id": "o028",
+   "text": "First say to yourself what you would be; and then do what you have to do.",
+   "by": "Epictetus",
+   "src": "Discourses 3.23 · c. 108 AD",
+   "xian": false
+  },
+  {
+   "id": "o029",
+   "text": "Men are disturbed not by things, but by the views which they take of things.",
+   "by": "Epictetus",
+   "src": "Enchiridion 5 · c. 125 AD",
+   "xian": false
+  },
+  {
+   "id": "o030",
+   "text": "How long are you going to wait before you demand the best for yourself?",
+   "by": "Epictetus",
+   "src": "Enchiridion 51 · c. 125 AD",
+   "xian": false
+  },
+  {
+   "id": "o031",
+   "text": "No great thing is created suddenly, any more than a bunch of grapes or a fig.",
+   "by": "Epictetus",
+   "src": "Discourses 1.15 · c. 108 AD",
+   "xian": false
+  },
+  {
+   "id": "o032",
+   "text": "If you want to improve, be content to be thought foolish and stupid.",
+   "by": "Epictetus",
+   "src": "Enchiridion 13 · c. 125 AD",
+   "xian": false
+  },
+  {
+   "id": "o033",
+   "text": "It is difficulties that show what men are.",
+   "by": "Epictetus",
+   "src": "Discourses 1.24 · c. 108 AD",
+   "xian": false
+  },
+  {
+   "id": "o034",
+   "text": "The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood; who strives valiantly.",
+   "by": "Theodore Roosevelt",
+   "src": "Citizenship in a Republic · Paris, 23 Apr 1910",
+   "xian": false
+  },
+  {
+   "id": "o035",
+   "text": "Nothing in the world is worth having or worth doing unless it means effort, pain, difficulty.",
+   "by": "Theodore Roosevelt",
+   "src": "Labor Day speech · Syracuse, 7 Sep 1903",
+   "xian": false
+  },
+  {
+   "id": "o036",
+   "text": "I wish to preach, not the doctrine of ignoble ease, but the doctrine of the strenuous life.",
+   "by": "Theodore Roosevelt",
+   "src": "The Strenuous Life · Chicago, 10 Apr 1899",
+   "xian": false
+  },
+  {
+   "id": "o037",
+   "text": "Do what you can, with what you have, where you are.",
+   "by": "Theodore Roosevelt",
+   "src": "An Autobiography · 1913",
+   "xian": false
+  },
+  {
+   "id": "o038",
+   "text": "If there is no struggle, there is no progress.",
+   "by": "Frederick Douglass",
+   "src": "West India Emancipation speech · 3 Aug 1857",
+   "xian": false
+  },
+  {
+   "id": "o039",
+   "text": "Everything can be taken from a man but one thing: the last of the human freedoms — to choose one's attitude in any given set of circumstances.",
+   "by": "Viktor Frankl",
+   "src": "Man's Search for Meaning · 1946",
+   "xian": false
+  },
+  {
+   "id": "o040",
+   "text": "When we are no longer able to change a situation, we are challenged to change ourselves.",
+   "by": "Viktor Frankl",
+   "src": "Man's Search for Meaning · 1946",
+   "xian": false
+  },
+  {
+   "id": "o041",
+   "text": "There is only one thing I dread: not to be worthy of my sufferings.",
+   "by": "Fyodor Dostoevsky",
+   "src": "quoted in Man's Search for Meaning · 1946",
+   "xian": false
+  },
+  {
+   "id": "o042",
+   "text": "He who has a why to live for can bear almost any how.",
+   "by": "Friedrich Nietzsche",
+   "src": "Twilight of the Idols · 1889",
+   "xian": false
+  },
+  {
+   "id": "o043",
+   "text": "What does not kill me makes me stronger.",
+   "by": "Friedrich Nietzsche",
+   "src": "Twilight of the Idols · 1889",
+   "xian": false
+  },
+  {
+   "id": "o044",
+   "text": "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+   "by": "Will Durant, on Aristotle",
+   "src": "The Story of Philosophy · 1926",
+   "xian": false
+  },
+  {
+   "id": "o045",
+   "text": "It is a disgrace to grow old through sheer carelessness before seeing what manner of man you may become by developing your bodily strength and beauty to their limit.",
+   "by": "Socrates",
+   "src": "Xenophon, Memorabilia 3.12 · c. 370 BC",
+   "xian": false
+  },
+  {
+   "id": "o046",
+   "text": "The journey of a thousand miles begins with a single step.",
+   "by": "Lao Tzu",
+   "src": "Tao Te Ching 64 · c. 400 BC",
+   "xian": false
+  },
+  {
+   "id": "o047",
+   "text": "I hated every minute of training, but I said: don't quit. Suffer now and live the rest of your life as a champion.",
+   "by": "Muhammad Ali",
+   "src": "attributed",
+   "xian": false
+  },
+  {
+   "id": "o048",
+   "text": "Rest at the end, not in the middle.",
+   "by": "Kobe Bryant",
+   "src": "interviews",
+   "xian": false
+  },
+  {
+   "id": "o049",
+   "text": "I've failed over and over and over again in my life. And that is why I succeed.",
+   "by": "Michael Jordan",
+   "src": "Nike ad · 1997",
+   "xian": false
+  },
+  {
+   "id": "o050",
+   "text": "Strength does not come from winning. Your struggles develop your strengths.",
+   "by": "Arnold Schwarzenegger",
+   "src": "attributed",
+   "xian": false
+  },
+  {
+   "id": "o051",
+   "text": "The last three or four reps is what makes the muscle grow.",
+   "by": "Arnold Schwarzenegger",
+   "src": "Pumping Iron · 1977",
+   "xian": false
+  },
+  {
+   "id": "o052",
+   "text": "I fear not the man who has practiced 10,000 kicks once, but I fear the man who has practiced one kick 10,000 times.",
+   "by": "Bruce Lee",
+   "src": "attributed",
+   "xian": false
+  },
+  {
+   "id": "o053",
+   "text": "Do not pray for an easy life, pray for the strength to endure a difficult one.",
+   "by": "Bruce Lee",
+   "src": "attributed",
+   "xian": false
+  },
+  {
+   "id": "o054",
+   "text": "Never give in, never give in, never, never, never — in nothing, great or small, large or petty.",
+   "by": "Winston Churchill",
+   "src": "Harrow School · 29 Oct 1941",
+   "xian": false
+  },
+  {
+   "id": "o055",
+   "text": "Genius is one per cent inspiration and ninety-nine per cent perspiration.",
+   "by": "Thomas Edison",
+   "src": "c. 1903",
+   "xian": false
+  },
+  {
+   "id": "o056",
+   "text": "The only easy day was yesterday.",
+   "by": "U.S. Navy SEALs",
+   "src": "training motto",
+   "xian": false
+  },
+  {
+   "id": "o057",
+   "text": "Play long-term games with long-term people.",
+   "by": "Naval Ravikant",
+   "src": "The Almanack of Naval Ravikant · 2020",
+   "xian": false
+  },
+  {
+   "id": "o058",
+   "text": "Desire is a contract that you make with yourself to be unhappy until you get what you want.",
+   "by": "Naval Ravikant",
+   "src": "The Almanack of Naval Ravikant · 2020",
+   "xian": false
+  },
+  {
+   "id": "o059",
+   "text": "Saving money is the gap between your ego and your income.",
+   "by": "Morgan Housel",
+   "src": "The Psychology of Money · 2020",
+   "xian": false
+  },
+  {
+   "id": "o060",
+   "text": "You do not rise to the level of your goals. You fall to the level of your systems.",
+   "by": "James Clear",
+   "src": "Atomic Habits · 2018",
+   "xian": false
+  },
+  {
+   "id": "o061",
+   "text": "Every action you take is a vote for the type of person you wish to become.",
+   "by": "James Clear",
+   "src": "Atomic Habits · 2018",
+   "xian": false
+  },
+  {
+   "id": "o062",
+   "text": "We must all suffer one of two things: the pain of discipline or the pain of regret.",
+   "by": "Jim Rohn",
+   "src": "attributed",
+   "xian": false
+  },
+  {
+   "id": "o063",
+   "text": "No human is limited.",
+   "by": "Eliud Kipchoge",
+   "src": "INEOS 1:59 Challenge · Vienna, 12 Oct 2019",
+   "xian": false
+  },
+  {
+   "id": "o064",
+   "text": "Only the disciplined ones in life are free. If you are undisciplined, you are a slave to your moods and your passions.",
+   "by": "Eliud Kipchoge",
+   "src": "interviews",
+   "xian": false
+  },
+  {
+   "id": "o065",
+   "text": "Physical fitness is not only one of the most important keys to a healthy body, it is the basis of dynamic and creative intellectual activity.",
+   "by": "John F. Kennedy",
+   "src": "The Soft American · Sports Illustrated, 26 Dec 1960",
+   "xian": false
+  },
+  {
+   "id": "o066",
+   "text": "Exercise is king. Nutrition is queen. Put them together and you've got a kingdom.",
+   "by": "Jack LaLanne",
+   "src": "attributed",
+   "xian": false
+  },
+  {
+   "id": "o067",
+   "text": "It ain't about how hard you hit. It's about how hard you can get hit and keep moving forward.",
+   "by": "Rocky Balboa",
+   "src": "Rocky Balboa · 2006",
+   "xian": false
+  },
+  {
+   "id": "o068",
+   "text": "Character cannot be developed in ease and quiet. Only through experience of trial and suffering can the soul be strengthened.",
+   "by": "Helen Keller",
+   "src": "Helen Keller's Journal · 1938",
+   "xian": false
+  },
+  {
+   "id": "o069",
+   "text": "Early to bed and early to rise, makes a man healthy, wealthy, and wise.",
+   "by": "Benjamin Franklin",
+   "src": "Poor Richard's Almanack · 1735",
+   "xian": false
+  },
+  {
+   "id": "o070",
+   "text": "Lost time is never found again.",
+   "by": "Benjamin Franklin",
+   "src": "Poor Richard's Almanack · 1748",
+   "xian": false
+  },
+  {
+   "id": "o071",
+   "text": "Well done is better than well said.",
+   "by": "Benjamin Franklin",
+   "src": "Poor Richard's Almanack · 1737",
+   "xian": false
+  },
+  {
+   "id": "o072",
+   "text": "If one advances confidently in the direction of his dreams, and endeavors to live the life which he has imagined, he will meet with a success unexpected in common hours.",
+   "by": "Henry David Thoreau",
+   "src": "Walden · 1854",
+   "xian": false
+  },
+  {
+   "id": "o073",
+   "text": "The line dividing good and evil cuts through the heart of every human being.",
+   "by": "Aleksandr Solzhenitsyn",
+   "src": "The Gulag Archipelago · 1973",
+   "xian": false
+  },
+  {
+   "id": "o074",
+   "text": "Compare yourself to who you were yesterday, not to who someone else is today.",
+   "by": "Jordan Peterson",
+   "src": "12 Rules for Life · 2018",
+   "xian": false
+  },
+  {
+   "id": "o075",
+   "text": "Set your house in perfect order before you criticize the world.",
+   "by": "Jordan Peterson",
+   "src": "12 Rules for Life · 2018",
+   "xian": false
+  },
+  {
+   "id": "o076",
+   "text": "Nobody cares. Work harder.",
+   "by": "Cameron Hanes",
+   "src": "motto",
+   "xian": false
+  },
+  {
+   "id": "o077",
+   "text": "To give anything less than your best is to sacrifice the gift.",
+   "by": "Steve Prefontaine",
+   "src": "attributed",
+   "xian": false
+  },
+  {
+   "id": "o078",
+   "text": "If you want to win something, run 100 metres. If you want to experience something, run a marathon.",
+   "by": "Emil Zátopek",
+   "src": "attributed",
+   "xian": false
+  },
+  {
+   "id": "o079",
+   "text": "Discipline is doing what you hate to do, but doing it like you love it.",
+   "by": "Mike Tyson",
+   "src": "attributed",
+   "xian": false
+  },
+  {
+   "id": "o080",
+   "text": "If you can't fly then run, if you can't run then walk, if you can't walk then crawl, but whatever you do you have to keep moving forward.",
+   "by": "Martin Luther King Jr.",
+   "src": "Spelman College · 10 Apr 1960",
+   "xian": false
+  },
+  {
+   "id": "o081",
+   "text": "In the midst of winter, I found there was, within me, an invincible summer.",
+   "by": "Albert Camus",
+   "src": "Return to Tipasa · 1952",
+   "xian": false
+  },
+  {
+   "id": "o082",
+   "text": "All we have to decide is what to do with the time that is given us.",
+   "by": "J. R. R. Tolkien",
+   "src": "The Fellowship of the Ring · 1954",
+   "xian": false
+  },
+  {
+   "id": "o083",
+   "text": "If you want to change the world, start off by making your bed.",
+   "by": "Adm. William H. McRaven",
+   "src": "UT Austin commencement · 17 May 2014",
+   "xian": false
+  },
+  {
+   "id": "o084",
+   "text": "Easy choices, hard life. Hard choices, easy life.",
+   "by": "Jerzy Gregorek",
+   "src": "attributed",
+   "xian": false
+  },
+  {
+   "id": "o085",
+   "text": "Hard times create strong men. Strong men create good times. Good times create weak men. And weak men create hard times.",
+   "by": "G. Michael Hopf",
+   "src": "Those Who Remain · 2016",
+   "xian": false
+  },
+  {
+   "id": "o086",
+   "text": "Pain + Reflection = Progress.",
+   "by": "Ray Dalio",
+   "src": "Principles · 2017",
+   "xian": false
+  },
+  {
+   "id": "o087",
+   "text": "Spend each day trying to be a little wiser than you were when you woke up.",
+   "by": "Charlie Munger",
+   "src": "USC Law commencement · 2007",
+   "xian": false
+  },
+  {
+   "id": "o088",
+   "text": "Your time is limited, so don't waste it living someone else's life.",
+   "by": "Steve Jobs",
+   "src": "Stanford commencement · 12 Jun 2005",
+   "xian": false
+  },
+  {
+   "id": "o089",
+   "text": "The first principle is that you must not fool yourself — and you are the easiest person to fool.",
+   "by": "Richard Feynman",
+   "src": "Caltech commencement · 1974",
+   "xian": false
+  },
+  {
+   "id": "o090",
+   "text": "It is not the mountain we conquer, but ourselves.",
+   "by": "Sir Edmund Hillary",
+   "src": "attributed",
+   "xian": false
+  },
+  {
+   "id": "o091",
+   "text": "Today is victory over yourself of yesterday; tomorrow is your victory over lesser men.",
+   "by": "Miyamoto Musashi",
+   "src": "The Book of Five Rings · 1645",
+   "xian": false
+  },
+  {
+   "id": "o092",
+   "text": "Fall seven times, stand up eight.",
+   "by": "Japanese proverb",
+   "src": "traditional",
+   "xian": false
+  },
+  {
+   "id": "o093",
+   "text": "The world breaks every one and afterward many are strong at the broken places.",
+   "by": "Ernest Hemingway",
+   "src": "A Farewell to Arms · 1929",
+   "xian": false
+  },
+  {
+   "id": "o094",
+   "text": "If you can fill the unforgiving minute with sixty seconds' worth of distance run, yours is the Earth and everything that's in it.",
+   "by": "Rudyard Kipling",
+   "src": "If— · 1910",
+   "xian": false
+  },
+  {
+   "id": "o095",
+   "text": "I am the master of my fate, I am the captain of my soul.",
+   "by": "William Ernest Henley",
+   "src": "Invictus · 1888",
+   "xian": false
+  },
+  {
+   "id": "o096",
+   "text": "To strive, to seek, to find, and not to yield.",
+   "by": "Alfred, Lord Tennyson",
+   "src": "Ulysses · 1842",
+   "xian": false
+  },
+  {
+   "id": "o097",
+   "text": "Don't let what you cannot do interfere with what you can do.",
+   "by": "John Wooden",
+   "src": "attributed",
+   "xian": false
+  },
+  {
+   "id": "o098",
+   "text": "The cowards never started and the weak died along the way. That leaves us.",
+   "by": "Phil Knight",
+   "src": "Shoe Dog · 2016",
+   "xian": false
+  },
+  {
+   "id": "o099",
+   "text": "If you no longer go for a gap that exists, you're no longer a racing driver.",
+   "by": "Ayrton Senna",
+   "src": "interview · 1990",
+   "xian": false
+  },
+  {
+   "id": "o100",
+   "text": "The hero and the coward both feel the same thing, but the hero uses his fear.",
+   "by": "Cus D'Amato",
+   "src": "attributed",
+   "xian": false
+  }
+ ]
+}

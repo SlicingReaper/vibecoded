@@ -2,92 +2,119 @@
 
 # 🖥️ Übersicht Desktop Widgets
 
-**Retro-terminal widgets for your macOS desktop** — a wallet, a habit checklist, a study timer, a notepad, a daily quote and three games (Tetris, Pong and 2048), all driven by plain files in an Obsidian vault.
+**Retro-terminal widgets for the macOS desktop**: a points wallet, a 75 Hard checklist, a study timer, a notepad, a daily quote and three games, plus a settings app that themes and arranges them all.
 
 ![macOS](https://img.shields.io/badge/macOS-Übersicht-3ef0ff?style=flat-square&logo=apple&logoColor=white&labelColor=040914)
 ![Python](https://img.shields.io/badge/Python-3.8%2B%20stdlib%20only-1f8fff?style=flat-square&logo=python&logoColor=white&labelColor=040914)
 ![Swift](https://img.shields.io/badge/Swift-settings%20app-ffb84d?style=flat-square&logo=swift&logoColor=white&labelColor=040914)
-![Built with Claude](https://img.shields.io/badge/vibecoded-with%20Claude-ff5ad9?style=flat-square&labelColor=040914)
+![Vibecoded](https://img.shields.io/badge/vibecoded-with%20Claude-ff5ad9?style=flat-square&labelColor=040914)
 
 </div>
 
+> 🤖 **Vibecoded.** Built with AI ([Claude](https://claude.ai)), with me directing, testing and using it every day. Treat it as a well-used prototype, not production software.
+
 ---
 
-## ✨ What's in the box
+## ✨ The widgets
 
-| Widget | Shows | Refreshes | Data it uses |
-|:--|:--|:-:|:--|
-| 💰 **WALLET//Ð** `doubloons.jsx` | Points balance, with a locked "vault" part, earned / spent totals and streak | 60 s | A `WALLET-DATA` line in the rewards page |
-| 🔥 **75//HARD** `75hard.jsx` | Today's 75 Hard checklist — tap a box to tick it | 5 s | The challenge log + `hard75.csv` |
-| ⏱️ **STUDY//TERM** `studyterm.jsx` | Stopwatch: start, pause, log a session or throw it away; tap the subject to cycle it | 1 s | `ledger.csv` (+ state in Application Support) |
-| ✎ **NOTE//PAD** `notepad.jsx` | Checklist notes with deadline countdowns and a bin | 2 s | `data/notepad.json` |
-| “ **QUOTE//DAY** `quote.jsx` | A new quote every midnight, with like / dislike and your own additions | 30 s | `data/quotes.json` |
-| ◉ **PONG//SOLO** `pong.jsx` | Single-player Pong: juggle the ball (A/D or ←/→), +1 per hit, faster every hit, miss = game over | 2 s (own 60 fps clock) | previous / best / games in Application Support |
-| ▦ **TETRIS//GRID** `tetris.jsx` | Tetris: click to play, arrows + space, hold, ghost piece, next preview, best score | live | Best score in Application Support |
-| ⊞ **2048//TILE** `game2048.jsx` | 2048: arrows / WASD or drag to slide, one-step undo, win screen at 2048, board survives reloads | live | Board + best score in Application Support |
-| 🎛️ **WIDGET//CTL** `widgetctl/` | Menu-bar app to pick the theme and position of every widget | — | `widgets.json` |
+Every widget has its own folder with its own README.
 
-## 🧭 Layout
+| | Widget | Folder | What it does | Data |
+|:-:|:--|:--|:--|:--|
+| 💰 | **WALLET//Ð** | [`wallet/`](wallet) | Points wallet: earn for good habits, spend on rewards, lock savings in a vault, track a streak | `wallet.json` |
+| 🔥 | **75//HARD** | [`75hard/`](75hard) | The 75 Hard challenge: today's 7 tasks, day counter, progress bar, automatic fail on a missed day | `hard75.json` |
+| ⏱️ | **STUDY//TERM** | [`study-term/`](study-term) | Study stopwatch: subjects, a one-line note per session, a stats page, pays points into the wallet | `sessions.csv` |
+| ✎ | **NOTE//PAD** | [`notepad/`](notepad) | Checklist notes with deadline countdowns, auto-expiry and a restorable bin | `notepad.json` |
+| “ | **QUOTE//DAY** | [`quote/`](quote) | A new quote every midnight from a pool of 300, with likes/dislikes and your own quotes | `quotes.json` |
+| ▦ | **TETRIS//GRID** | [`tetris/`](tetris) | Tetris: hold, ghost piece, next preview, levels, best score | best score |
+| ◉ | **PONG//SOLO** | [`pong/`](pong) | Single-player Pong: keep the ball up, it speeds up every hit | scores |
+| ⊞ | **2048//TILE** | [`2048/`](2048) | 2048 with undo, keyboard or drag, saved between sessions | board + best |
+| 🎛️ | **WIDGET//CTL** | [`widget-ctl/`](widget-ctl) | Menu-bar app: drag widgets around a grid, pick 16 colour schemes × 8 styles | `widgets.json` |
+| ⌨️ | **Hotkey** | [`hotkey/`](hotkey) | `⌃⌥⌘W` shows / hides every widget at once | flag file |
 
-```
-  ┌───────────┐ ┌───────────┐ ┌───────────┐
-  │PONG//SOLO │ │ NOTE//PAD │ │ WALLET//Ð │
-  │           │ │           │ ├───────────┤
-  │           │ │           │ │ 75//HARD  │
-  ├───────────┤ ├───────────┤ │           │
-  │2048//TILE │ │TETRIS//GRD│ ├───────────┤
-  │           │ │           │ │STUDY//TERM│
-  │           │ │           │ ├───────────┤
-  └───────────┘ └───────────┘ │QUOTE//DAY │
-                              └───────────┘
-```
-Widgets are 230 px wide with 12 px gaps. Move any of them in WIDGET//CTL.
+## 🧩 Two editions: standalone and Obsidian
 
-## 🎨 Themes
+| | Standalone (default) | Obsidian edition |
+|:--|:--|:--|
+| **Who it's for** | Anyone with a Mac | Me: it runs inside my Obsidian vault |
+| **Where data lives** | `~/Library/Application Support/STUDYTERM/standalone/` | Pages and CSV files inside the vault, regenerated by a build script |
+| **Setup** | Double-click `install.command` | Needs my vault layout and `build.py` (not published) |
+| **Files** | The `.jsx` / `.py` in each widget folder | `wallet/obsidian/`, `75hard/obsidian/`, `study-term/obsidian/` |
 
-WIDGET//CTL (`⌃⌥⌘S`) styles every widget at once, and the change shows immediately.
-
-- **15 colour schemes** — cyan, amber, matrix, vapor, sunset, ice, gold, royal, marble, pastel, rose, ink, forest, ocean, rainbow (hue-cycling)
-- **7 finishes** — terminal, crt, glass, minimal, marble, paper, bold
+The wallet, 75 Hard and study timer were first written to read and write my vault directly. The standalone versions do the same jobs with their own small JSON/CSV files. They still work together: logged study time pays points into the wallet. The Obsidian copies are published as reference only.
 
 ## 🚀 Install
 
-1. Install [Übersicht](https://tracesof.net/uebersicht/).
-2. Double-click **`Install STUDYTERM.command`**. It installs Übersicht if missing, copies the eight widgets and starts everything at login.
-3. Optional: double-click **`Install WIDGETCTL.command`** for the settings app.
+1. Download this folder: the green **Code** button → *Download ZIP*, or `git clone` the repo.
+2. Double-click **`uebersicht-widgets/install.command`**. If macOS blocks it, right-click → *Open*.
+   It installs [Übersicht](https://tracesof.net/uebersicht/) if needed, copies the widgets and backends, builds the hotkey and settings app, and starts everything at login.
+3. Click a widget to use it. If clicks fall through to the desktop: Übersicht menu-bar icon → the widget → turn on interaction.
 
-**Hotkeys:** `⌃⌥⌘W` shows / hides all widgets · `⌃⌥⌘S` opens WIDGET//CTL.
+**Needs:** macOS 13+, `python3` 3.8+ (`xcode-select --install` provides it). Building the hotkey and WIDGET//CTL also needs `swiftc` from the same command. The widgets work without them.
+
+**Just one widget?** Copy its `.jsx` into Übersicht's widgets folder (menu-bar icon → *Open Widgets Folder*). The games need nothing else. For the others, also copy the `.py` into `~/Library/Application Support/STUDYTERM/standalone/bin/`.
+
+**Remove:** double-click `uninstall.command`. It asks before it deletes any data.
+
+## 🧭 Default layout
+
+```
+  ┌──────────┐ ┌──────────┐ ┌──────────┐
+  │PONG//SOLO│ │NOTE//PAD │ │WALLET//Ð │
+  │          │ │          │ ├──────────┤
+  │          │ │          │ │ 75//HARD │
+  ├──────────┤ ├──────────┤ │          │
+  │2048//TILE│ │ TETRIS   │ ├──────────┤
+  │          │ │  //GRID  │ │STUDY/TERM│
+  │          │ │          │ ├──────────┤
+  └──────────┘ └──────────┘ │QUOTE//DAY│
+                            └──────────┘
+```
+Columns are 230 px wide with 12 px gaps, anchored top-right. Rearrange them, or store ones you don't want, in WIDGET//CTL (`⌃⌥⌘S`).
 
 ## ⚙️ How it works
 
 ```
- Übersicht widget (.jsx)  ──shell──▶  Python backend (.py)  ──▶  plain files in your vault
-        ▲                                                              │
-        └──────────────────────  re-reads on refresh  ◀────────────────┘
+ widget (.jsx, React in Übersicht) ──shell──▶ Python backend (.py, stdlib only) ──▶ JSON / CSV in Application Support
+        ▲                                                                                   │
+        └──────────────────────────── re-reads on every refresh ◀───────────────────────────┘
 ```
 
-- Widgets are React/JSX that shell out to small **stdlib-only Python** scripts. No dependencies, no server.
-- The timer stores timestamps rather than a counter, so it survives sleep, reboot and quitting Übersicht.
-- Settings live in `~/Library/Application Support/STUDYTERM/widgets.json`.
-
-## 📁 Files
+- Widgets shell out to small Python scripts with **no dependencies** and no server.
+- Every write is atomic (temp file + rename) and guarded by a file lock, so a double click can't corrupt anything.
+- The study timer stores timestamps, not a running counter, so it survives sleep, reboot and quitting Übersicht.
+- Theme and position come from one shared block at the top of every `.jsx`, which reads `widgets.json` written by WIDGET//CTL.
 
 ```
-├── doubloons.jsx · 75hard.jsx · studyterm.jsx · notepad.jsx · quote.jsx · tetris.jsx · pong.jsx · game2048.jsx   widgets
-├── studyterm.py · notepad.py · quote.py                                     backends
-├── widgetctl/                                                               settings app (Swift + HTML)
-├── widget-hotkey.swift · widgets-toggle.sh                                  ⌃⌥⌘W show / hide
-└── Install … · Check … · Restart … .command                                 helper scripts
+~/Library/Application Support/STUDYTERM/
+├── widgets.json            theme + layout (WIDGET//CTL)
+├── hidden                  exists = widgets hidden (⌃⌥⌘W)
+├── tetris-best · pong-scores · 2048-*      game scores
+└── standalone/
+    ├── bin/                the backends (installed copies)
+    ├── data/               wallet.json · hard75.json · sessions.csv · notepad.json · quotes*.json · studyterm-config.json
+    └── studyterm/          running timer + stats page
 ```
 
-## ⚠️ Read this before forking
+## 📁 Repo layout
 
-These were built for **one person's vault**, so they are not plug-and-play:
+```
+uebersicht-widgets/
+├── install.command · uninstall.command
+├── wallet/        doubloons.jsx · wallet.py · obsidian/
+├── 75hard/        75hard.jsx · hard75.py · obsidian/
+├── study-term/    studyterm.jsx · studyterm.py · obsidian/
+├── notepad/       notepad.jsx · notepad.py
+├── quote/         quote.jsx · quote.py · quotes.json
+├── tetris/ · pong/ · 2048/      one .jsx each
+├── widget-ctl/    WidgetCTL.swift · ctl.html · Info.plist · icon.png
+└── hotkey/        widget-hotkey.swift · widgets-toggle.sh
+```
 
-- They look for a vault at `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian Vault/X's Second Brain` (falling back to `~/Documents/...`). Change the `V=` line at the top of each `.jsx`.
-- The data files above (ledger, challenge log, quote pool) and the `build.py` that regenerates the vault pages are **not included**. Without them, NOTE//PAD, the two games and WIDGET//CTL work best; the others need you to supply the files.
-- Study subjects are placeholders. Edit `SUBJECTS` in `studyterm.py`.
+## 🛠️ Writing your own widget
 
-## 🤖 About
+Copy any game folder as a template. Keep the `WIDGET//CTL block` at the top unchanged, but give it a new `W_ID`. Then add one line to the `WIDGETS` registry in `widget-ctl/ctl.html`, so the settings app can place and theme it. One gotcha: don't use JSX fragments (`<>…</>`). Übersicht has no global `React`, so fragments crash with *Can't find variable: React*.
 
-Vibecoded with [Claude](https://claude.ai). Part of [**vibecoded**](..), a collection of AI-built projects.
+---
+
+<div align="center"><sub>Part of <a href="..">vibecoded</a>: my AI-built projects. Hand-written work lives in separate repos.</sub></div>
