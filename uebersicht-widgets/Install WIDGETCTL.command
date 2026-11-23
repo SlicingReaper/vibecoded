@@ -36,7 +36,7 @@ rm -rf "$TMP"
 # 3. widgets → Übersicht (they now read their theme + position from widgets.json)
 W="$(ls -d "$HOME/Library/Application Support/"*bersicht/widgets 2>/dev/null | head -1)"
 if [ -n "$W" ]; then
-  cp "$M/studyterm.jsx" "$M/doubloons.jsx" "$M/75hard.jsx" "$M/notepad.jsx" "$M/quote.jsx" "$M/tetris.jsx" "$W/" && echo "✓ widgets copied to $W"
+  cp "$M/studyterm.jsx" "$M/doubloons.jsx" "$M/75hard.jsx" "$M/notepad.jsx" "$M/quote.jsx" "$M/tetris.jsx" "$M/pong.jsx" "$M/game2048.jsx" "$W/" && echo "✓ widgets copied to $W"
 else
   echo "✗ Übersicht widgets folder not found — run Install STUDYTERM.command first"
 fi

@@ -2,7 +2,7 @@
 
 # 🖥️ Übersicht Desktop Widgets
 
-**Retro-terminal widgets for your macOS desktop** — a wallet, a habit checklist, a study timer, a notepad and a daily quote, all driven by plain files in an Obsidian vault.
+**Retro-terminal widgets for your macOS desktop** — a wallet, a habit checklist, a study timer, a notepad, a daily quote and three games (Tetris, Pong and 2048), all driven by plain files in an Obsidian vault.
 
 ![macOS](https://img.shields.io/badge/macOS-Übersicht-3ef0ff?style=flat-square&logo=apple&logoColor=white&labelColor=040914)
 ![Python](https://img.shields.io/badge/Python-3.8%2B%20stdlib%20only-1f8fff?style=flat-square&logo=python&logoColor=white&labelColor=040914)
@@ -22,22 +22,24 @@
 | ⏱️ **STUDY//TERM** `studyterm.jsx` | Stopwatch: start, pause, log a session or throw it away; tap the subject to cycle it | 1 s | `ledger.csv` (+ state in Application Support) |
 | ✎ **NOTE//PAD** `notepad.jsx` | Checklist notes with deadline countdowns and a bin | 2 s | `data/notepad.json` |
 | “ **QUOTE//DAY** `quote.jsx` | A new quote every midnight, with like / dislike and your own additions | 30 s | `data/quotes.json` |
+| ◉ **PONG//SOLO** `pong.jsx` | Single-player Pong: juggle the ball (A/D or ←/→), +1 per hit, faster every hit, miss = game over | 2 s (own 60 fps clock) | previous / best / games in Application Support |
 | ▦ **TETRIS//GRID** `tetris.jsx` | Tetris: click to play, arrows + space, hold, ghost piece, next preview, best score | live | Best score in Application Support |
+| ⊞ **2048//TILE** `game2048.jsx` | 2048: arrows / WASD or drag to slide, one-step undo, win screen at 2048, board survives reloads | live | Board + best score in Application Support |
 | 🎛️ **WIDGET//CTL** `widgetctl/` | Menu-bar app to pick the theme and position of every widget | — | `widgets.json` |
 
 ## 🧭 Layout
 
 ```
-  ┌───────────┐ ┌───────────┐
-  │ NOTE//PAD │ │ WALLET//Ð │
-  │           │ ├───────────┤
-  │           │ │ 75//HARD  │
-  └───────────┘ │           │
-                ├───────────┤
-                │STUDY//TERM│
-                ├───────────┤
-                │QUOTE//DAY │
-                └───────────┘
+  ┌───────────┐ ┌───────────┐ ┌───────────┐
+  │PONG//SOLO │ │ NOTE//PAD │ │ WALLET//Ð │
+  │           │ │           │ ├───────────┤
+  │           │ │           │ │ 75//HARD  │
+  ├───────────┤ ├───────────┤ │           │
+  │2048//TILE │ │TETRIS//GRD│ ├───────────┤
+  │           │ │           │ │STUDY//TERM│
+  │           │ │           │ ├───────────┤
+  └───────────┘ └───────────┘ │QUOTE//DAY │
+                              └───────────┘
 ```
 Widgets are 230 px wide with 12 px gaps. Move any of them in WIDGET//CTL.
 
@@ -51,7 +53,7 @@ WIDGET//CTL (`⌃⌥⌘S`) styles every widget at once, and the change shows imm
 ## 🚀 Install
 
 1. Install [Übersicht](https://tracesof.net/uebersicht/).
-2. Double-click **`Install STUDYTERM.command`**. It installs Übersicht if missing, copies the five widgets and starts everything at login.
+2. Double-click **`Install STUDYTERM.command`**. It installs Übersicht if missing, copies the eight widgets and starts everything at login.
 3. Optional: double-click **`Install WIDGETCTL.command`** for the settings app.
 
 **Hotkeys:** `⌃⌥⌘W` shows / hides all widgets · `⌃⌥⌘S` opens WIDGET//CTL.
@@ -71,7 +73,7 @@ WIDGET//CTL (`⌃⌥⌘S`) styles every widget at once, and the change shows imm
 ## 📁 Files
 
 ```
-├── doubloons.jsx · 75hard.jsx · studyterm.jsx · notepad.jsx · quote.jsx · tetris.jsx   widgets
+├── doubloons.jsx · 75hard.jsx · studyterm.jsx · notepad.jsx · quote.jsx · tetris.jsx · pong.jsx · game2048.jsx   widgets
 ├── studyterm.py · notepad.py · quote.py                                     backends
 ├── widgetctl/                                                               settings app (Swift + HTML)
 ├── widget-hotkey.swift · widgets-toggle.sh                                  ⌃⌥⌘W show / hide
@@ -83,7 +85,7 @@ WIDGET//CTL (`⌃⌥⌘S`) styles every widget at once, and the change shows imm
 These were built for **one person's vault**, so they are not plug-and-play:
 
 - They look for a vault at `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian Vault/X's Second Brain` (falling back to `~/Documents/...`). Change the `V=` line at the top of each `.jsx`.
-- The data files above (ledger, challenge log, quote pool) and the `build.py` that regenerates the vault pages are **not included**. Without them, NOTE//PAD and WIDGET//CTL work best; the others need you to supply the files.
+- The data files above (ledger, challenge log, quote pool) and the `build.py` that regenerates the vault pages are **not included**. Without them, NOTE//PAD, the two games and WIDGET//CTL work best; the others need you to supply the files.
 - Study subjects are placeholders. Edit `SUBJECTS` in `studyterm.py`.
 
 ## 🤖 About
