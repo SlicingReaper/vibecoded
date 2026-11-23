@@ -22,6 +22,7 @@
 | ⏱️ **STUDY//TERM** `studyterm.jsx` | Stopwatch: start, pause, log a session or throw it away; tap the subject to cycle it | 1 s | `ledger.csv` (+ state in Application Support) |
 | ✎ **NOTE//PAD** `notepad.jsx` | Checklist notes with deadline countdowns and a bin | 2 s | `data/notepad.json` |
 | “ **QUOTE//DAY** `quote.jsx` | A new quote every midnight, with like / dislike and your own additions | 30 s | `data/quotes.json` |
+| ▦ **TETRIS//GRID** `tetris.jsx` | Tetris: click to play, arrows + space, hold, ghost piece, next preview, best score | live | Best score in Application Support |
 | 🎛️ **WIDGET//CTL** `widgetctl/` | Menu-bar app to pick the theme and position of every widget | — | `widgets.json` |
 
 ## 🧭 Layout
@@ -70,7 +71,7 @@ WIDGET//CTL (`⌃⌥⌘S`) styles every widget at once, and the change shows imm
 ## 📁 Files
 
 ```
-├── doubloons.jsx · 75hard.jsx · studyterm.jsx · notepad.jsx · quote.jsx   widgets
+├── doubloons.jsx · 75hard.jsx · studyterm.jsx · notepad.jsx · quote.jsx · tetris.jsx   widgets
 ├── studyterm.py · notepad.py · quote.py                                     backends
 ├── widgetctl/                                                               settings app (Swift + HTML)
 ├── widget-hotkey.swift · widgets-toggle.sh                                  ⌃⌥⌘W show / hide

@@ -16,7 +16,7 @@ fi
 [ -n "$APP" ] && echo "✓ app: $APP" || echo "✗ Übersicht install failed"
 W="$(ls -d "$HOME/Library/Application Support/"*bersicht/widgets 2>/dev/null | head -1)"
 [ -n "$W" ] || W="$HOME/Library/Application Support/Übersicht/widgets"
-mkdir -p "$W" && cp "$M/studyterm.jsx" "$M/doubloons.jsx" "$M/75hard.jsx" "$M/notepad.jsx" "$M/quote.jsx" "$W/" && echo "✓ widgets copied to $W"
+mkdir -p "$W" && cp "$M/studyterm.jsx" "$M/doubloons.jsx" "$M/75hard.jsx" "$M/notepad.jsx" "$M/quote.jsx" "$M/tetris.jsx" "$W/" && echo "✓ widgets copied to $W"
 ls "$W"
 if python3 -c 'import sys; assert sys.version_info >= (3, 8)' 2>/dev/null; then
   echo "✓ $(python3 --version) at $(command -v python3)"

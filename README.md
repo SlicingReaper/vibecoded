@@ -12,7 +12,7 @@
 
 | Project | What it is | Stack |
 |:--|:--|:--|
-| 🖥️ [**uebersicht-widgets**](uebersicht-widgets) | Retro-terminal macOS desktop widgets: wallet, 75 Hard checklist, study timer, notepad, quote of the day, plus a theme/position settings app | Übersicht · JSX · Python · Swift |
+| 🖥️ [**uebersicht-widgets**](uebersicht-widgets) | Retro-terminal macOS desktop widgets: wallet, 75 Hard checklist, study timer, notepad, quote of the day, Tetris, plus a theme/position settings app | Übersicht · JSX · Python · Swift |
 
 ## 🧭 How this repo works
 
