@@ -11,7 +11,7 @@ Code I wrote myself is tagged [`handwritten`](https://github.com/SlicingReaper?t
 
 ## 🖥️ Retro-terminal desktop widgets for macOS
 
-Nine small projects for [Übersicht](https://tracesof.net/uebersicht/), each in its own repo with its own README and one-click installer. They share one look (navy panel, cyan glow, monospace, corner brackets), one theme engine and one show/hide hotkey, so together they make a desktop dashboard.
+Ten small projects for [Übersicht](https://tracesof.net/uebersicht/), each in its own repo with its own README and one-click installer. They share one look (navy panel, cyan glow, monospace, corner brackets), one theme engine and one show/hide hotkey, so together they make a desktop dashboard.
 
 | | Project | What it does | Built with |
 |:-:|:--|:--|:--|
@@ -22,24 +22,27 @@ Nine small projects for [Übersicht](https://tracesof.net/uebersicht/), each in 
 | “ | [**QUOTE//DAY**](https://github.com/SlicingReaper/quote-of-the-day-widget) | A new quote every midnight from 300; likes and dislikes tune the draw | JSX · Python |
 | ▦ | [**TETRIS//GRID**](https://github.com/SlicingReaper/tetris-widget) | Tetris: 7-bag, hold, ghost piece, levels, best score | JSX |
 | ◉ | [**PONG//SOLO**](https://github.com/SlicingReaper/pong-widget) | Single-player Pong that speeds up 7 % every hit | JSX |
+| ◎ | [**PONG//DUO**](https://github.com/SlicingReaper/pong-duo-widget) | Two-player Pong, three widgets wide: W/S vs ↑/↓, first to 7 | JSX |
 | ⊞ | [**2048//TILE**](https://github.com/SlicingReaper/2048-widget) | 2048 with undo, keyboard or drag, saved across reboots | JSX |
+| ⌂ | [**OUTPOST//**](https://github.com/SlicingReaper/outpost-colony-widget) | Colony-trading game: claim land, outfit robots, trade against 3 AI rivals over 12 months | JSX |
+| ☠ | [**DOOM//TERM**](https://github.com/SlicingReaper/doom-widget) | DOOM shareware Episode 1 in a 2-column widget: doomgeneric compiled to WebAssembly, savegames kept | JSX · C → WASM |
 | 🎛️ | [**WIDGET//CTL**](https://github.com/SlicingReaper/widgetctl) | Menu-bar app: drag widgets on a grid, 16 colour schemes × 8 styles, `⌃⌥⌘W` hides them all | Swift · HTML |
 
 ### Install everything
 
-Download this repo and double-click **`install-all.command`**. It fetches the nine repos and runs each one's installer. Want just one? Open its repo and use its own `install.command`.
+Download this repo and double-click **`install-all.command`**. It fetches the twelve repos and runs each one's installer. Want just one? Open its repo and use its own `install.command`.
 
 ```
-  ┌──────────┐ ┌──────────┐ ┌──────────┐
-  │PONG//SOLO│ │NOTE//PAD │ │WALLET//Ð │
-  │          │ │          │ ├──────────┤
-  │          │ │          │ │ 75//HARD │
-  ├──────────┤ ├──────────┤ │          │
-  │2048//TILE│ │ TETRIS   │ ├──────────┤
-  │          │ │  //GRID  │ │STUDY/TERM│
-  │          │ │          │ ├──────────┤
-  └──────────┘ └──────────┘ │QUOTE//DAY│
-                            └──────────┘
+  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐
+  │ OUTPOST//│ │PONG//SOLO│ │NOTE//PAD │ │WALLET//Ð │
+  │          │ │          │ │          │ ├──────────┤
+  │          │ │          │ │          │ │ 75//HARD │
+  └──────────┘ ├──────────┤ ├──────────┤ │          │
+               │2048//TILE│ │ TETRIS   │ ├──────────┤
+               │          │ │  //GRID  │ │STUDY/TERM│
+               │          │ │          │ ├──────────┤
+               └──────────┘ └──────────┘ │QUOTE//DAY│
+                                         └──────────┘
 ```
 <sub>Default layout. Rearrange or hide widgets in WIDGET//CTL (`⌃⌥⌘S`).</sub>
 
