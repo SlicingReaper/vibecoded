@@ -11,7 +11,7 @@ Code I wrote myself is tagged [`handwritten`](https://github.com/SlicingReaper?t
 
 ## 🖥️ Retro-terminal desktop widgets for macOS
 
-Ten small projects for [Übersicht](https://tracesof.net/uebersicht/), each in its own repo with its own README and one-click installer. They share one look (navy panel, cyan glow, monospace, corner brackets), one theme engine and one show/hide hotkey, so together they make a desktop dashboard.
+Fourteen small projects for [Übersicht](https://tracesof.net/uebersicht/), each in its own repo with its own README and one-click installer. They share one look (navy panel, cyan glow, monospace, corner brackets), one theme engine and one show/hide hotkey, so together they make a desktop dashboard.
 
 | | Project | What it does | Built with |
 |:-:|:--|:--|:--|
@@ -26,11 +26,14 @@ Ten small projects for [Übersicht](https://tracesof.net/uebersicht/), each in i
 | ⊞ | [**2048//TILE**](https://github.com/SlicingReaper/2048-widget) | 2048 with undo, keyboard or drag, saved across reboots | JSX |
 | ⌂ | [**OUTPOST//**](https://github.com/SlicingReaper/outpost-colony-widget) | Colony-trading game: claim land, outfit robots, trade against 3 AI rivals over 12 months | JSX |
 | ☠ | [**DOOM//TERM**](https://github.com/SlicingReaper/doom-widget) | DOOM shareware Episode 1 in a 2-column widget: doomgeneric compiled to WebAssembly, savegames kept | JSX · C → WASM |
+| ◍ | [**GLOBE//GUESS**](https://github.com/SlicingReaper/globe-widget) | Daily mystery-country game on a spinning globe; guesses glow hotter the closer they are | JSX · canvas |
+| ◍ | [**ATLAS//QUIZ**](https://github.com/SlicingReaper/atlas-quiz-widget) | Sporcle-style map quiz: 197 countries, each continent, 50 US states; names light up green | JSX |
+| W | [**WORDLE//**](https://github.com/SlicingReaper/wordle-widget) | The daily five-letter word game: streaks, guess distribution, practice mode | JSX |
 | 🎛️ | [**WIDGET//CTL**](https://github.com/SlicingReaper/widgetctl) | Menu-bar app: drag widgets on a grid, 16 colour schemes × 8 styles, `⌃⌥⌘W` hides them all | Swift · HTML |
 
 ### Install everything
 
-Download this repo and double-click **`install-all.command`**. It fetches the twelve repos and runs each one's installer. Want just one? Open its repo and use its own `install.command`.
+Download this repo and double-click **`install-all.command`**. It fetches the fifteen repos and runs each one's installer. Want just one? Open its repo and use its own `install.command`.
 
 ```
   ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐
