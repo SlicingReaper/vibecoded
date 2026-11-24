@@ -28,7 +28,7 @@ Fourteen small projects for [Übersicht](https://tracesof.net/uebersicht/), each
 | ☠ | [**DOOM//TERM**](https://github.com/SlicingReaper/doom-widget) | DOOM shareware Episode 1 in a 2-column widget: doomgeneric compiled to WebAssembly, savegames kept | JSX · C → WASM |
 | ◍ | [**GLOBE//GUESS**](https://github.com/SlicingReaper/globe-widget) | Daily mystery-country game on a spinning globe; guesses glow hotter the closer they are | JSX · canvas |
 | ◍ | [**ATLAS//QUIZ**](https://github.com/SlicingReaper/atlas-quiz-widget) | Sporcle-style map quiz: 197 countries, each continent, 50 US states; names light up green | JSX |
-| W | [**WORDLE//**](https://github.com/SlicingReaper/wordle-widget) | The daily five-letter word game: streaks, guess distribution, practice mode | JSX |
+| W | [**WORDLE//**](https://github.com/SlicingReaper/wordle-widget) | Wordle in EN · FR · ES · DE: daily word per language, a new word any time, streaks | JSX |
 | 🎛️ | [**WIDGET//CTL**](https://github.com/SlicingReaper/widgetctl) | Menu-bar app: drag widgets on a grid, 16 colour schemes × 8 styles, `⌃⌥⌘W` hides them all | Swift · HTML |
 
 ### Install everything
