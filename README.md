@@ -64,6 +64,7 @@ Native Swift apps. Not part of `install-all.command`: open the repo in Xcode and
 | | Project | What it does | Built with |
 |:-:|:--|:--|:--|
 | 🎤 | [**Voice Finder**](https://github.com/SlicingReaper/voice-finder) | Finds your vocal range, comfortable zone and voice type, then trains it with game-like lessons and suggests songs in your key | Swift · SwiftUI · vDSP |
+| 🌊 | [**Deep**](https://github.com/SlicingReaper/deep) | Trains your breath hold with game-like lessons: calm breathing, CO₂ and O₂ tables, water safety, a practice deck, lo-fi music, ranks from Land Lubber to Beaked Whale | Swift · SwiftUI · AVAudioEngine |
 
 ---
 
